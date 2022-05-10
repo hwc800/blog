@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>MarkDown</title>
+		<!--适配手机-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="shortcut icon" href="static/ico/qyz.jpg">
+		<!--使用bootstrap的样式，比较好看-->
+		<link href="static/markdown/bootstrap.min.css" rel="stylesheet">
+		<style>
+			h1 {
+				font-family: Consolas, monaco, monospace;
+				font-size: 23px;
+				font-style: normal;
+				font-variant: normal;
+				font-weight: 500;
+				line-height: 23px;
+			}
+
+			h3 {
+				font-family: Consolas, monaco, monospace;
+				font-size: 17px;
+				font-style: normal;
+				font-variant: normal;
+				font-weight: 500;
+				line-height: 23px;
+			}
+
+			p {
+				font-family: Consolas, monaco, monospace;
+				font-size: 14px;
+				font-style: normal;
+				font-variant: normal;
+				font-weight: 400;
+				line-height: 23px;
+			}
+
+			blockquote {
+				font-family: Consolas, monaco, monospace;
+				font-size: 17px;
+				font-style: normal;
+				font-variant: normal;
+				font-weight: 400;
+				line-height: 23px;
+			}
+
+			pre {
+				font-family: Consolas, monaco, monospace;
+				font-size: 12px;
+				font-style: normal;
+				font-variant: normal;
+				font-weight: 400;
+				line-height: 23px;
+			}
+
+			#text-input {
+				margin-left: 4%;
+				padding: 15px;
+				height: 1200px;
+				width: 96%;
+				border: none;
+				resize: none;
+			}
+
+			#preview {
+				padding: 15px;
+				width: 96%;
+				border: none;
+				height: 1200px;
+				overflow-y:auto;
+				overflow-x:auto;
+			}
+
+			body {
+				overflow-x: none;
+			}
+		</style>
+	</head>
+	<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<body>
+		<center>
+			<h1>{{ title }}</h1>
+		</center>
+		<div class="row">
+			<div id="ShowPage">
+				<div style="margin:0 100px 0 400px;">
+					<div id="preview" class="bg-primary" rows="6"> </div>
+				</div>
+			</div>
+		</div>
+
+		<script src="static/markdown/markdown.min.js"></script>
+		<script>
+			function Editor(preview) {
+				this.update = function() {
+					preview.innerHTML = markdown.toHTML('{{ content }}');
+				};
+				this.update();
+			}
+			var $ = function(id) {
+				return document.getElementById(id);
+			};
+			new Editor($("preview"));
+		</script>
+
+	</body>
+</html>

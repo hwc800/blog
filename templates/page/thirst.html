@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="static/ico/qyz.jpg">
+    <meta http-equiv="Cache-Control" content="no-siteapp"><meta http-equiv="Cache-Control" content="no-transform ">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>
+	明水洞天
+    </title>
+    <meta name="description" content="关关雎鸠，在河之洲。窈窕淑女，君子好逑。参差荇菜，左右流之。窈窕淑女，寤寐求之。求之不得，寤寐思服。悠哉悠哉，辗转反侧。参差荇菜，左右采之。窈窕淑女，琴瑟友之。参差荇菜，左右芼之。">
+    <script type="text/javascript" async="" src="https://pos.baidu.com/auto_dup?di=0&amp;uuid=7e48cb57a9e35e21&amp;dri=0&amp;dis=0&amp;dai=0&amp;ps=0x0&amp;enu=encoding&amp;exps=110011&amp;ant=0&amp;psi=d4b49db5b0e0f3aa&amp;dcb=___baidu_union_callback&amp;dtm=AUTO_JSONP&amp;dvi=0.0&amp;dci=-1&amp;dpt=none&amp;tpr=1651916335148&amp;ti=%E5%85%B3%E9%9B%8E%E5%8E%9F%E6%96%87%E3%80%81%E7%BF%BB%E8%AF%91%E5%8F%8A%E8%B5%8F%E6%9E%90_%E5%8F%A4%E8%AF%97_%E5%8F%A4%E8%AF%97%E6%96%87%E7%BD%91&amp;ari=2&amp;ver=0428&amp;dbv=2&amp;drs=3&amp;pcs=2543x1273&amp;pss=2543x3247&amp;cfv=0&amp;cpl=3&amp;chi=1&amp;cce=true&amp;cec=UTF-8&amp;tlm=1651916335&amp;prot=2&amp;rw=1273&amp;ltu=https%3A%2F%2Fso.gushiwen.cn%2Fshiwenv_4c5705b99143.aspx&amp;ltr=https%3A%2F%2Fwww.gushiwen.cn%2F&amp;ecd=1&amp;uc=2560x1400&amp;pis=-1x-1&amp;sr=2560x1440&amp;tcn=1651916335&amp;dc=4&amp;aa=1">
+
+    </script>
+    <script type="text/javascript" async="" src="https://enennsa.gushiwen.cn/jnkhlqx.js"></script>
+    <script type="text/javascript" async="" src="https://dup.baidustatic.com/dup/painter/dynamicFloat.js"></script>
+    <script type="text/javascript" async="" src="https://cpro.baidustatic.com/cpro/ui/cm.js"></script>
+    <script type="text/javascript" async="" src="https://cpro.baidustatic.com/cpro/ui/pr.js"></script>
+    <script type="text/javascript" async="" src="https://enennsa.gushiwen.cn/njlpdn.js"></script>
+    <script src="//hm.baidu.com/hm.js?9007fab6814e892d3020a64454da5a55"></script><script type="text/javascript">
+        if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+            window.location.href = "https://m.gushiwen.cn/shiwenv_4c5705b99143.aspx";
+        } else {
+
+        }
+</script>
+<link href="static/css/skinSo20220419.css" rel="stylesheet" type="text/css">
+<script src="static/js/jquery-3.2.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    //取得cookie值
+    function getCookie(name) {
+        var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+
+        if (arr = document.cookie.match(reg))
+
+            return unescape(arr[2]);
+        else
+            return null;
+    }
+
+    //判断收藏
+    function selectLike(id) {
+        document.getElementById('likeImg' + id).name = parseInt(document.getElementById('likeImg' + id).name) + 1;
+        if (document.getElementById('likeImg' + id).name == '1') {
+            var idsShigeLaiyo = getCookie('idsShiwen2017');
+            if (idsShigeLaiyo != null && idsShigeLaiyo != '') {
+                var ids = idsShigeLaiyo.split(',');
+                for (var i = 0; i < ids.length; i++) {
+                    if (ids[i] == id) {
+                        document.getElementById('likeImg' + id).src = 'https://song.gushiwen.cn/siteimg/shou-cangok.png';
+                        document.getElementById('likeImg' + id).alt = '已收藏';
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+    //判断收藏名句
+    function selectLikeMingju(id) {
+        document.getElementById('likeImg' + id).name = parseInt(document.getElementById('likeImg' + id).name) + 1;
+        if (document.getElementById('likeImg' + id).name == '1') {
+            var idsShigeLaiyo = getCookie('idsMingju2017');
+            if (idsShigeLaiyo != null && idsShigeLaiyo != '') {
+                var ids = idsShigeLaiyo.split(',');
+                for (var i = 0; i < ids.length; i++) {
+                    if (ids[i] == id) {
+                        document.getElementById('likeImg' + id).src = 'https://song.gushiwen.cn/siteimg/shou-cangok.png';
+                        document.getElementById('likeImg' + id).alt = '已收藏';
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+    //判断收藏作者
+    function selectLikeAuthor(id) {
+        document.getElementById('likeImg' + id).name = parseInt(document.getElementById('likeImg' + id).name) + 1;
+        if (document.getElementById('likeImg' + id).name == '1') {
+            var idsShigeLaiyo = getCookie('idsAuthor2017');
+            if (idsShigeLaiyo != null && idsShigeLaiyo != '') {
+                var ids = idsShigeLaiyo.split(',');
+                for (var i = 0; i < ids.length; i++) {
+                    if (ids[i] == id) {
+                        document.getElementById('likeImg' + id).src = 'https://song.gushiwen.cn/siteimg/shou-cangok.png';
+                        document.getElementById('likeImg' + id).alt = '已收藏';
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+    //判断收藏古籍
+    function selectLikeGuwen(id) {
+        document.getElementById('likeImg' + id).name = parseInt(document.getElementById('likeImg' + id).name) + 1;
+        if (document.getElementById('likeImg' + id).name == '1') {
+            var idsShigeLaiyo = getCookie('idsGuji2017');
+            if (idsShigeLaiyo != null && idsShigeLaiyo != '') {
+                var ids = idsShigeLaiyo.split(',');
+                for (var i = 0; i < ids.length; i++) {
+                    if (ids[i] == id) {
+                        document.getElementById('likeImg' + id).src = 'https://song.gushiwen.cn/siteimg/shou-cangok.png';
+                        document.getElementById('likeImg' + id).alt = '已收藏';
+                        break;
+                    }
+                }
+            }
+        }
+    }
+    </script>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9007fab6814e892d3020a64454da5a55";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+</script>
+
+<link rel="stylesheet" type="text/css" href="https://song.gushiwen.cn/huaci/graybox.css">
+<link rel="stylesheet" type="text/css" href="https://song.gushiwen.cn/huaci/blackdownbar.css"></head>
+<body onclick="closeshowBos()">
+<div class="main1">
+    <div class="cont">
+        <div class="left">
+            <a href="http://www.boygirs.com">明水洞天</a>
+        </div>
+        <div class="right">
+            <div class="son1">
+<!--                <a style="margin-left:1px;" href="http://www.boygirs.com">推荐</a>-->
+
+<!--                  <a href="/shiwens/" style="background-color:#757863;border-bottom:3px solid #F0EFE2;line-height:43px; height:43px;">诗文</a>-->
+
+<!--                  <a href="/mingjus/">名句</a>-->
+
+<!--                  <a href="/authors/">作者</a>-->
+
+<!--                  <a href="/guwen/">古籍</a>-->
+
+<!--                  <a href="/user/collect.aspx" rel="nofollow">我的</a>-->
+
+<!--                <a style="width:65px;" href="/app/DefaultGwd.aspx" target="_blank">手机版</a>-->
+            </div>
+            <div class="son2">
+                <div class="search">
+                <form action="/search.aspx" onsubmit="return selectSearch()" contenttype="text/html; charset=utf-8">
+                    <input onkeydown="noajaxkeyUp()" onfocus="setInterval('showBos()',1000)" id="txtKey" name="value" type="text" value="" maxlength="40" autocomplete="off" style="height:25px; line-height:25px; float:left; padding-left:5px; width:260px; font-size:14px; clear:left; border:0px;">
+                    <input type="submit" style="float:right; width:24px; height:24px; clear:right; margin-top:2px; margin-right:3px; background-image:url(https://song.gushiwen.cn/siteimg/docSearch.png); background-repeat:no-repeat; background-size:24px 24px; border:0px;cursor:pointer;" value="">
+                    <input id="b" style="display:none;" type="text">
+                </form>
+                </div>
+                <div id="box" style="display: none;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="main3">
+    <div class="left">
+    <div style=" width:1px; height:1px; overflow:hidden;">
+<textarea style=" background-color:#F0EFE2; border:0px;overflow:hidden;" cols="1" rows="1" id="txtare1">关关雎鸠，在河之洲。窈窕淑女，君子好逑。参差荇菜，左右流之。窈窕淑女，寤寐求之。求之不得，寤寐思服。悠哉悠哉，辗转反侧。参差荇菜，左右采之。窈窕淑女，琴瑟友之。参差荇菜，左右芼之。窈窕淑女，钟鼓乐之。——先秦·佚名《关雎》https://so.gushiwen.cn/shiwenv_4c5705b99143.aspx</textarea>
+</div>
+          <div class="sons" id="sonsyuanwen">
+          <div class="cont">
+               <div class="yizhu">
+               <img src="https://song.gushiwen.cn/siteimg/bei-pic.png" width="25" height="25" alt="背诵" onclick="OnBeisong('4c5705b99143','http://so.gushiwen.cn/shiwenv.aspx?id=4c5705b99143')" id="btnBeisong4c5705b99143">
+                    <img style="display: block;" src="https://song.gushiwen.cn/siteimg/shang-pic.png" width="25" height="25" alt="赏析" onclick="OnShangxi('4c5705b99143')" id="btnShangxi4c5705b99143">
+                    <img style="display: block;" src="https://song.gushiwen.cn/siteimg/zhu-pic.png" width="25" height="25" alt="注释" onclick="OnZhushi('4c5705b99143')" id="btnZhushi4c5705b99143">
+                    <img style="display: block;" src="https://song.gushiwen.cn/siteimg/yi-pic.png" width="25" height="25" alt="译文" onclick="OnYiwen('4c5705b99143')" id="btnYiwen4c5705b99143">
+
+                    <script type="text/javascript">
+                        document.getElementById("btnShangxi4c5705b99143").style.display = "block";
+                    </script>
+
+                    <script type="text/javascript">
+                        document.getElementById("btnZhushi4c5705b99143").style.display = "block";
+                    </script>
+
+                    <script type="text/javascript">
+                        document.getElementById("btnYiwen4c5705b99143").style.display = "block";
+                    </script>
+
+               </div>
+               <h1 style="font-size:20px; line-height:22px; height:22px; margin-bottom:10px;">关雎</h1>
+               <p class="source"><a href="/authorv_2128926194cd.aspx">佚名</a> <a href="https://so.gushiwen.cn/shiwens/default.aspx?cstr=%e5%85%88%e7%a7%a6">〔先秦〕</a></p>
+                <div class="contson" id="contson4c5705b99143">
+                    关关雎鸠，在河之洲。窈窕淑女，君子好逑。<br>参差荇菜，左右流之。窈窕淑女，寤寐求之。<br>求之不得，寤寐思服。悠哉悠哉，辗转反侧。<br>参差荇菜，左右采之。窈窕淑女，琴瑟友之。<br>参差荇菜，左右芼之。窈窕淑女，钟鼓乐之。
+                </div>
+          </div>
+          <div class="tool">
+            <div class="shoucang"><img id="likeImg1" name="1" onload="selectLike(1)" onclick="changeLike(1,'1A0BBDB531CC9CAD','http://so.gushiwen.cn/shiwenv.aspx?id=4c5705b99143')" src="https://song.gushiwen.cn/siteimg/shou-cang.png" alt="收藏" width="19" height="19"></div>
+            <div class="toolpinglun"><a href="https://so.gushiwen.cn/app/DefaultGwd.aspx"><img src="https://song.gushiwen.cn/siteimg/down-load.png" alt="下载" width="19" height="19"></a></div>
+            <div class="toolpinglun"><a href="javascript:copy(1)"><img src="https://song.gushiwen.cn/siteimg/co-py.png" alt="复制" width="19" height="19"></a></div>
+
+              <div class="toolpinglun"><a href="javascript:Play('4c5705b99143','http://so.gushiwen.cn/shiwenv.aspx?id=4c5705b99143')"><img id="speakerimg4c5705b99143" src="https://song.gushiwen.cn/siteimg/speak-er.png" alt="" width="19" height="19"></a></div>
+
+            <div class="jiucuo"><a style="line-height:18px;" href="/jiucuo.aspx?u=%e8%af%97%e6%96%874c5705b99143%e3%80%8a%e5%85%b3%e9%9b%8e%e3%80%8b" target="_blank">完善</a></div>
+            </div>
+            <div id="toolPlay4c5705b99143" style=" display:none;clear:both;"></div>
+        </div>
+
+                    <div id="fanyi1" class="sons" style="position: relative; display: none;">
+            <div class="contyishang" style="padding-bottom:10px;">
+            <div style=" z-index:100px; height:60px; width:100%; position:absolute; bottom:38px; background-image:url(https://song.gushiwen.cn/siteimg/morebg.png); background-repeat:repeat-x; cursor:pointer; -webkit-tap-highlight-color: transparent;" onclick="fanyiShow(1,'C6F8233433DCEA7E')"></div>
+            <div style="height:30px; font-weight:bold; font-size:16px; margin-bottom:10px; clear:both;">
+            <h2><span style="float:left;">译文及注释</span></h2>
+            <a style="float:left; margin-top:7px; margin-left:5px;" href="javascript:PlayFanyi(1,'http://so.gushiwen.cn/shiwenv.aspx?id=4c5705b99143')"><img id="speakerimgFanyi1" src="https://song.gushiwen.cn/siteimg/speak-er.png" alt="" width="16" height="16"></a>
+            <span id="fanyiPlay1" style=" display:none;width:1px; height:1px; float:left;"></span>
+            </div>
+            <p>译文<br>关关和鸣的雎鸠，栖息在河中的小洲。贤良美好的女子，是君子好的配偶。<br>参差不齐的荇菜，在船的左右两边摘取。贤良美好的女子，日日夜夜都想追求她。<br>追求却没法得到，日日夜夜总思念她。绵绵不断的思念，叫人翻来覆去难入睡。<br>参差不齐的荇菜，在船的左右两边摘取。贤良美好的女子，弹琴鼓瑟来亲近她。<br>参差不齐的荇菜，在船的左右两边去挑选它。贤良美好的女子，敲起钟鼓来取悦她。</p>
+<p>注释<br>关关：象声词，雌雄二鸟相互应和的叫声。<br>雎鸠（jū jiū）：一种水鸟，一般认为就是鱼鹰，传说它们雌雄形影不离。<br>洲：水中的
+            </p><div style="text-align:center; margin-top:-5px;"><a style="text-decoration:none;" href="javascript:fanyiShow(1,'C6F8233433DCEA7E')">展开阅读全文 ∨</a></div>
+            </div>
+        </div>
+                    <div id="fanyiquan1" class="sons" style="display: block;">
+
+
+            <div class="contyishang">
+            <div style="height:30px; font-weight:bold; font-size:16px; margin-bottom:10px; clear:both;">
+            <h2><span style="float:left;">译文及注释</span></h2>
+            <a style="float:left; margin-top:7px; margin-left:5px;" href="javascript:PlayFanyiquan(1,'https://so.gushiwen.cn/shiwenv.aspx?id=4c5705b99143')"><img id="speakerimgFanyiquan1" src="https://song.gushiwen.cn/siteimg/speak-er.png" alt="" width="16" height="16"></a>
+            </div>
+            <p><strong>译文</strong><br>关关和鸣的雎鸠，栖息在河中的小洲。贤良美好的女子，是君子好的配偶。<br>参差不齐的荇菜，在船的左右两边摘取。贤良美好的女子，日日夜夜都想追求她。<br>追求却没法得到，日日夜夜总思念她。绵绵不断的思念，叫人翻来覆去难入睡。<br>参差不齐的荇菜，在船的左右两边摘取。贤良美好的女子，弹琴鼓瑟来亲近她。<br>参差不齐的荇菜，在船的左右两边去挑选它。贤良美好的女子，敲起钟鼓来取悦她。</p>
+<p><strong>注释</strong><br>关关：象声词，雌雄二鸟相互应和的叫声。<br>雎鸠（jū jiū）：一种水鸟，一般认为就是鱼鹰，传说它们雌雄形影不离。<br>洲：水中的陆地。<br>窈窕（yǎo tiǎo）淑女：贤良美好的女子。窈窕，身材体态美好的样子。窈，深邃，喻女子心灵美；窕，幽美，喻女子仪表美。淑，好，善良。<br>好逑（hǎo qiú）：好的配偶。逑，“仇”的假借字，匹配。<br>参差：长短不齐的样子。<br>荇（xìng）菜：一种可食的水草。<br>左右流之：时而向左、时而向右地择取荇菜。这里是以勉力求取荇菜，隐喻“君子”努力追求“淑女”。流，求取。之：指荇菜。<br>寤寐（wù mèi）：醒和睡。指日夜。寤，醒觉。寐，入睡。又，马瑞辰《毛诗传笺注通释》说：“寤寐，犹梦寐。”也可通。<br>思服：思念。服，想。 《毛传》：“服，思之也。”<br>悠哉（yōu zāi）悠哉：思念之情绵绵不尽，思念深长的样子 。悠，忧思的样子。这句是说思念绵绵不断。悠，感思。见《尔雅·释诂》<a href="https://so.gushiwen.cn/authorv_565a4f9e5486.aspx" target="_blank">郭璞</a>注。哉，语气助词。悠哉悠哉，犹言“想念呀，想念呀”。<br>辗转反侧：翻覆不能入眠。辗，古字作展。展转，即反侧。反侧，犹翻覆。<br>琴瑟友之：弹琴鼓瑟来亲近她。琴、瑟，皆弦乐器。琴五或七弦，瑟二十五或五十弦。友：用作动词，此处有亲近之意。这句说，用琴瑟来亲近“淑女”。<br>芼（mào）：挑选。<br>钟鼓乐之：用钟奏乐来使她快乐。乐，使动用法，使……快乐。<a title="收起" href="javascript:fanyiClose(1)">▲</a></p>
+            </div>
+
+            <div class="cankao">
+
+<p style=" color:#999999;margin:0px; font-size:12px;line-height:160%;-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;">参考资料：<a style="width:30px; height:16px; line-height:16px; float:right; border:1px solid #C5C5C5; color:#999999; text-align:center;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;" href="/jiucuo.aspx?u=%e7%bf%bb%e8%af%911%e3%80%8a%e8%af%91%e6%96%87%e5%8f%8a%e6%b3%a8%e9%87%8a%e3%80%8b" target="_blank">完善</a></p>
+
+        <div style="clear:both; float:left;color:#999999; font-size:12px; width:630px; margin-top:4px;-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;">
+        <span style="width:20px; float:left;">1、</span>
+        <span style="width:610px; float:left;">骆玉明 等 ．先秦诗鉴赏辞典 ．上海 ：上海辞书出版社 ，1998 ：1-6 ．</span>
+        </div>
+
+        <div style="clear:both; float:left;color:#999999; font-size:12px; width:630px; margin-top:4px;-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;">
+        <span style="width:20px; float:left;">2、</span>
+        <span style="width:610px; float:left;">朱熹 ．诗经集传 ．上海 ：上海古籍出版社 ，1987 ：1-2 ．</span>
+        </div>
+
+            </div>
+
+            </div>
+
+            <div id="shangxi4" class="sons" style="position:relative; z-index:0px;">
+            <div class="contyishang" style="padding-bottom:10px;">
+            <div style="z-index:100px; height:60px; width:100%; position:absolute; bottom:38px; background-image:url(https://song.gushiwen.cn/siteimg/morebg.png); background-repeat:repeat-x; cursor:pointer; -webkit-tap-highlight-color: transparent;" onclick="shangxiShow(4,'D5C75314494CA5F8')"></div>
+            <div style="height:30px; font-weight:bold; font-size:16px; margin-bottom:10px; clear:both;">
+            <h2><span style="float:left;">赏析</span></h2>
+            <a style="float:left; margin-top:7px; margin-left:5px;" href="javascript:PlayShangxi(4,'http://so.gushiwen.cn/shiwenv.aspx?id=4c5705b99143')"><img id="speakerimgShangxi4" src="https://song.gushiwen.cn/siteimg/speak-er.png" alt="" width="16" height="16"></a>
+            <span id="shangxiPlay4" style=" display:none;width:1px; height:1px; float:left;"></span>
+            </div>
+            <p>　　《国风·周南·关雎》这首短小的诗篇，在中国文学史上占据着特殊的位置。它是《诗经》的第一篇，而《诗经》是中国文学最古老的典籍。虽然从性质上判断，一些神话故事产生的年代应该还要早些，但作为书面记载，却是较迟的事情。所以差不多可以说，一翻开中国文学的历史，首先遇到的就是《关雎》。</p>
+<p>　　通常认为是一首描写男女恋爱的情歌。此诗在艺术上巧妙地采用了“兴”的表现手法。首章以雎鸟相向合鸣，相依相恋，兴起淑女陪君子的联想。以下各章，又以采荇菜这一行为兴起主人公对女子疯狂地相思与追求。全诗语言优美，善于运用双声、叠韵和重叠词，增强了诗歌的音韵美和写人状物、拟声传情的生动性。</p>
+
+                <div style="text-align:center; margin-top:-5px;"><a style="text-decoration:none;" href="javascript:shangxiShow(4,'D5C75314494CA5F8')">展开阅读全文 ∨</a></div>
+            </div>
+        </div>
+               <div id="shangxiquan4" class="sons" style="display:none;"></div>
+
+            <div id="shangxi3" class="sons" style="position:relative; z-index:0px;">
+            <div class="contyishang" style="padding-bottom:10px;">
+            <div style="z-index:100px; height:60px; width:100%; position:absolute; bottom:38px; background-image:url(https://song.gushiwen.cn/siteimg/morebg.png); background-repeat:repeat-x; cursor:pointer; -webkit-tap-highlight-color: transparent;" onclick="shangxiShow(3,'04EB03718918BECC')"></div>
+            <div style="height:30px; font-weight:bold; font-size:16px; margin-bottom:10px; clear:both;">
+            <h2><span style="float:left;">写作手法</span></h2>
+            <a style="float:left; margin-top:7px; margin-left:5px;" href="javascript:PlayShangxi(3,'http://so.gushiwen.cn/shiwenv.aspx?id=4c5705b99143')"><img id="speakerimgShangxi3" src="https://song.gushiwen.cn/siteimg/speak-er.png" alt="" width="16" height="16"></a>
+            <span id="shangxiPlay3" style=" display:none;width:1px; height:1px; float:left;"></span>
+            </div>
+            <p>　　这诗的主要表现手法是兴寄，《毛传》云：“兴也。”什么是“兴”？孔颖达的解释最得要领，他在《毛诗正义》中说：“‘兴’者，起也。取譬引类，起发己心，《诗》文诸举草木鸟兽以见意者，皆‘兴’辞也。”所谓“兴”，即先从别的景物引起所咏之物，以为寄托。这是一种委婉含蓄的表现手法。如此诗以雎鸠之“挚而有别”，兴淑女应配君子；以荇菜流动无方，兴淑女之难求；又以荇菜既得而“采之”、“芼之”，兴淑女既得而“友之”、“乐之”等。这种手法的优点在于寄托深远，能产生文已尽而意有余的效果。</p>
+<p>　　这首诗还采用了一些双声叠韵的连绵字，以增强诗歌音调的和谐美和描写人物的生动性。如“窈窕”是叠韵；“参差
+                </p><div style="text-align:center; margin-top:-5px;"><a style="text-decoration:none;" href="javascript:shangxiShow(3,'04EB03718918BECC')">展开阅读全文 ∨</a></div>
+            </div>
+        </div>
+               <div id="shangxiquan3" class="sons" style="display:none;"></div>
+
+            <div id="shangxi2" class="sons" style="position:relative; z-index:0px;">
+            <div class="contyishang" style="padding-bottom:10px;">
+            <div style="z-index:100px; height:60px; width:100%; position:absolute; bottom:38px; background-image:url(https://song.gushiwen.cn/siteimg/morebg.png); background-repeat:repeat-x; cursor:pointer; -webkit-tap-highlight-color: transparent;" onclick="shangxiShow(2,'B4AE7FB52ACCD765')"></div>
+            <div style="height:30px; font-weight:bold; font-size:16px; margin-bottom:10px; clear:both;">
+            <h2><span style="float:left;">赏析二</span></h2>
+            <a style="float:left; margin-top:7px; margin-left:5px;" href="javascript:PlayShangxi(2,'http://so.gushiwen.cn/shiwenv.aspx?id=4c5705b99143')"><img id="speakerimgShangxi2" src="https://song.gushiwen.cn/siteimg/speak-er.png" alt="" width="16" height="16"></a>
+            <span id="shangxiPlay2" style=" display:none;width:1px; height:1px; float:left;"></span>
+            </div>
+            <p>　　《关雎》是《风》之始也，也是《诗经》第一篇。古人把它冠于三百零五篇之首，说明对它评价很高。《史记·外戚世家》曾经记述说：“《易》基乾坤，《诗》始《关雎》，《书》美厘降……夫妇之际，人道之大伦也。”又《汉书·匡衡传》记载匡衡疏云：“匹配之际，生民之始，万福之原。婚姻之礼正，然后品物遂而天命全。孔子论《诗》，一般都是以《关雎》为始。……此纲纪之首，王教之端也。”他们的着眼点是迂腐的，但对诗的本义的概括却基本正确。问题在于它所表现的是什么样的婚姻。这关系到我们对《风》的理解。朱熹《诗集传》“序”说：“凡诗之所谓风者，多出于里巷歌谣之作，所谓男女相与咏歌，各言其情者也。”又郑樵《通志·乐略·
+                </p><div style="text-align:center; margin-top:-5px;"><a style="text-decoration:none;" href="javascript:shangxiShow(2,'B4AE7FB52ACCD765')">展开阅读全文 ∨</a></div>
+            </div>
+        </div>
+               <div id="shangxiquan2" class="sons" style="display:none;"></div>
+
+          <div style=" width:1px; height:1px; overflow:hidden;">
+        <textarea style=" background-color:#F0EFE2; border:0px;overflow:hidden;" cols="1" rows="1" id="txtareAuthor24544">亦称无名氏，是指身份不明或者尚未了解姓名的人。源于古代或民间、不知由谁创作的文学、音乐作品会以佚名为作者名称。https://so.gushiwen.cn/authorv_2128926194cd.aspx</textarea>
+        </div>
+                <div class="sonspic">
+                <div class="cont" style="margin-top:13px;">
+
+            <p style="height:22px;">
+            <a style="font-size:18px; line-height:22px; height:22px;" href="/authorv_2128926194cd.aspx"><b>佚名</b></a>
+            <a style="margin-left:5px;" href="javascript:PlayAuthor(24544,'http://so.gushiwen.cn/shiwenv.aspx?id=4c5705b99143')"><img id="speakerimgAuthor24544" src="https://song.gushiwen.cn/siteimg/speak-er.png" alt="" width="16" height="16"></a>
+            <span id="authorPlay24544" style=" display:none;width:1px; height:1px;"></span>
+            </p>
+                        <p style=" margin:0px;">亦称无名氏，是指身份不明或者尚未了解姓名的人。源于古代或民间、不知由谁创作的文学、音乐作品会以佚名为作者名称。</p>
+                </div>
+                <div class="tool">
+                    <div class="shoucang"><img id="likeImg24544" name="1" onload="selectLikeAuthor(24544)" onclick="changeLikeAuthor(24544,'4B164BEF9C27FD11','http://so.gushiwen.cn/shiwenv.aspx?id=4c5705b99143')" src="https://song.gushiwen.cn/siteimg/shou-cang.png" alt="收藏" width="19" height="19"></div>
+                    <div class="toolpinglun"><a href="https://so.gushiwen.cn/app/DefaultGwd.aspx"><img src="https://song.gushiwen.cn/siteimg/down-load.png" alt="下载" width="19" height="19"></a></div>
+                    <div class="toolpinglun"><a href="javascript:copyAuthor(24544)"><img src="https://song.gushiwen.cn/siteimg/co-py.png" alt="复制" width="19" height="19"></a></div>
+                    <div class="toolpinglun"><a href="/authorv_2128926194cd.aspx"><img src="https://song.gushiwen.cn/siteimg/tool-more.png" alt="详情" width="19" height="19"></a></div>
+                    <div class="jiucuo"><a href="/jiucuo.aspx?u=%e4%bd%9c%e8%80%852128926194cd%e3%80%8a%e4%bd%9a%e5%90%8d%e3%80%8b" target="_blank">完善</a></div>
+                    </div>
+            </div>
+
+<div class="title">
+    <div class="titleleft"></div>
+    猜您喜欢
+</div>
+
+<div style=" width:1px; height:1px; overflow:hidden;">
+<textarea style=" background-color:#F0EFE2; border:0px;overflow:hidden;" cols="1" rows="1" id="txtare47747">楚王渡江得萍实。大如斗。
+赤如日。剖而食之甜如蜜。——先秦·佚名《楚童谣》https://so.gushiwen.cn/shiwenv_e0a17d6e7e40.aspx</textarea>
+</div>
+          <div class="sons">
+          <div class="cont">
+               <div class="yizhu">
+               <img src="https://song.gushiwen.cn/siteimg/bei-pic.png" width="25" height="25" alt="背诵" onclick="OnBeisong('e0a17d6e7e40','http://so.gushiwen.cn/shiwenv.aspx?id=4c5705b99143')" id="btnBeisonge0a17d6e7e40">
+                                   <img style=" display:none;" src="https://song.gushiwen.cn/siteimg/shang-pic.png" width="25" height="25" alt="赏析" onclick="OnShangxi('e0a17d6e7e40')" id="btnShangxie0a17d6e7e40">
+                    <img style=" display:none;" src="https://song.gushiwen.cn/siteimg/zhu-pic.png" width="25" height="25" alt="注释" onclick="OnZhushi('e0a17d6e7e40')" id="btnZhushie0a17d6e7e40">
+                    <img style=" display:none;" src="https://song.gushiwen.cn/siteimg/yi-pic.png" width="25" height="25" alt="译文" onclick="OnYiwen('e0a17d6e7e40')" id="btnYiwene0a17d6e7e40">
+
+               </div>
+               <p><a style="font-size:18px; line-height:22px; height:22px;" href="/shiwenv_e0a17d6e7e40.aspx"><b>楚童谣</b></a></p>
+               <p class="source"><a href="/authorv.aspx?name=%e4%bd%9a%e5%90%8d" target="_blank">佚名</a><a href="https://so.gushiwen.cn/shiwens/default.aspx?cstr=%e5%85%88%e7%a7%a6">〔先秦〕</a></p>
+                <div class="contson" id="contsone0a17d6e7e40">
+
+楚王渡江得萍实。<br>大如斗。<br>
+赤如日。<br>剖而食之甜如蜜。<br>
+
+                </div>
+          </div>
+          <div class="tool">
+            <div class="shoucang"><img id="likeImg47747" name="1" onload="selectLike(47747)" onclick="changeLike(47747,'A9CB1C9C050BA1A7','http://so.gushiwen.cn/shiwenv.aspx?id=4c5705b99143')" src="https://song.gushiwen.cn/siteimg/shou-cang.png" alt="收藏" width="19" height="19"></div>
+            <div class="toolpinglun"><a href="https://so.gushiwen.cn/app/DefaultGwd.aspx"><img src="https://song.gushiwen.cn/siteimg/down-load.png" alt="下载" width="19" height="19"></a></div>
+
+              <div class="toolpinglun"><a href="https://so.gushiwen.cn/shiwenv_e0a17d6e7e40.aspx"><img src="https://song.gushiwen.cn/siteimg/tool-more.png" alt="详情" width="19" height="19"></a></div>
+                <div class="jiucuo"><a href="/jiucuo.aspx?u=%e8%af%97%e6%96%87e0a17d6e7e40%e3%80%8a%e6%a5%9a%e7%ab%a5%e8%b0%a3%e3%80%8b" target="_blank">完善</a></div>
+            </div>
+            <div id="toolPlaye0a17d6e7e40" style=" display:none;clear:both;"></div>
+        </div>
+
+<div style=" width:1px; height:1px; overflow:hidden;">
+<textarea style=" background-color:#F0EFE2; border:0px;overflow:hidden;" cols="1" rows="1" id="txtare150">鸤鸠在桑，其子七兮。淑人君子，其仪一兮。其仪一兮，心如结兮。鸤鸠在桑，其子在梅。淑人君子，其带伊丝。其带伊丝，其弁伊骐。鸤鸠在桑，其子在棘。淑人君子，其仪不忒。其仪不忒，正是四国。鸤鸠在桑，其子在榛。淑人君子，正是国人，正是国人。胡不万年？——先秦·佚名《鸤鸠》https://so.gushiwen.cn/shiwenv_03a21225b09c.aspx</textarea>
+</div>
+          <div class="sons">
+          <div class="cont">
+               <div class="yizhu">
+               <img src="https://song.gushiwen.cn/siteimg/bei-pic.png" width="25" height="25" alt="背诵" onclick="OnBeisong('03a21225b09c','http://so.gushiwen.cn/shiwenv.aspx?id=4c5705b99143')" id="btnBeisong03a21225b09c">
+                                   <img style="display: block;" src="https://song.gushiwen.cn/siteimg/shang-pic.png" width="25" height="25" alt="赏析" onclick="OnShangxi('03a21225b09c')" id="btnShangxi03a21225b09c">
+                    <img style="display: block;" src="https://song.gushiwen.cn/siteimg/zhu-pic.png" width="25" height="25" alt="注释" onclick="OnZhushi('03a21225b09c')" id="btnZhushi03a21225b09c">
+                    <img style="display: block;" src="https://song.gushiwen.cn/siteimg/yi-pic.png" width="25" height="25" alt="译文" onclick="OnYiwen('03a21225b09c')" id="btnYiwen03a21225b09c">
+
+                    <script type="text/javascript">
+                        document.getElementById("btnShangxi03a21225b09c").style.display = "block";
+                    </script>
+
+                    <script type="text/javascript">
+                        document.getElementById("btnZhushi03a21225b09c").style.display = "block";
+                    </script>
+
+                    <script type="text/javascript">
+                        document.getElementById("btnYiwen03a21225b09c").style.display = "block";
+                    </script>
+
+               </div>
+               <p><a style="font-size:18px; line-height:22px; height:22px;" href="/shiwenv_03a21225b09c.aspx"><b>鸤鸠</b></a></p>
+               <p class="source"><a href="/authorv.aspx?name=%e4%bd%9a%e5%90%8d" target="_blank">佚名</a><a href="https://so.gushiwen.cn/shiwens/default.aspx?cstr=%e5%85%88%e7%a7%a6">〔先秦〕</a></p>
+                <div class="contson" id="contson03a21225b09c">
+                    <p>鸤鸠在桑，其子七兮。淑人君子，其仪一兮。其仪一兮，心如结兮。<br>鸤鸠在桑，其子在梅。淑人君子，其带伊丝。其带伊丝，其弁伊骐。<br>鸤鸠在桑，其子在棘。淑人君子，其仪不忒。其仪不忒，正是四国。<br>鸤鸠在桑，其子在榛。淑人君子，正是国人，正是国人。胡不万年？</p>
+                </div>
+          </div>
+          <div class="tool">
+            <div class="shoucang"><img id="likeImg150" name="1" onload="selectLike(150)" onclick="changeLike(150,'5FE6BDC710C2174A','http://so.gushiwen.cn/shiwenv.aspx?id=4c5705b99143')" src="https://song.gushiwen.cn/siteimg/shou-cang.png" alt="收藏" width="19" height="19"></div>
+            <div class="toolpinglun"><a href="https://so.gushiwen.cn/app/DefaultGwd.aspx"><img src="https://song.gushiwen.cn/siteimg/down-load.png" alt="下载" width="19" height="19"></a></div>
+
+              <div class="toolpinglun"><a href="https://so.gushiwen.cn/shiwenv_03a21225b09c.aspx"><img src="https://song.gushiwen.cn/siteimg/tool-more.png" alt="详情" width="19" height="19"></a></div>
+                <div class="jiucuo"><a href="/jiucuo.aspx?u=%e8%af%97%e6%96%8703a21225b09c%e3%80%8a%e9%b8%a4%e9%b8%a0%e3%80%8b" target="_blank">完善</a></div>
+            </div>
+            <div id="toolPlay03a21225b09c" style=" display:none;clear:both;"></div>
+        </div>
+
+<div style=" width:1px; height:1px; overflow:hidden;">
+<textarea style=" background-color:#F0EFE2; border:0px;overflow:hidden;" cols="1" rows="1" id="txtare72187">吕、郤畏逼，将焚公宫而弑晋侯。寺人披请见。公使让之，且辞焉，曰：“蒲城之役，君命一宿，女即至。其后余从狄君以田渭滨，女为惠公来求杀余，命女三宿，女中宿至。虽有君命何其速也？夫袪犹在，女其行乎！”对曰：“臣谓君之入也，其知之矣。若犹未也，又将及难。君命无二，古之制也。除君之恶，唯力是视。蒲人、狄人、余何有焉？即位，其无蒲、狄乎！齐桓公置射钩，而使管仲相。君若易之，何辱命焉？行者甚众，岂唯刑臣？”公见之，以难告。晋侯潜会秦伯于王城。己丑晦，公宫火。瑕甥、郤芮不获公，乃如河上，秦伯诱而杀之。——先秦·左丘明《寺人披见文公》https://so.gushiwen.cn/shiwenv_ee805a0e1c53.aspx</textarea>
+</div>
+          <div class="sons">
+          <div class="cont">
+               <div class="yizhu">
+               <img src="https://song.gushiwen.cn/siteimg/bei-pic.png" width="25" height="25" alt="背诵" onclick="OnBeisong('ee805a0e1c53','http://so.gushiwen.cn/shiwenv.aspx?id=4c5705b99143')" id="btnBeisongee805a0e1c53">
+                                   <img style="display: block;" src="https://song.gushiwen.cn/siteimg/shang-pic.png" width="25" height="25" alt="赏析" onclick="OnShangxi('ee805a0e1c53')" id="btnShangxiee805a0e1c53">
+                    <img style="display: block;" src="https://song.gushiwen.cn/siteimg/zhu-pic.png" width="25" height="25" alt="注释" onclick="OnZhushi('ee805a0e1c53')" id="btnZhushiee805a0e1c53">
+                    <img style="display: block;" src="https://song.gushiwen.cn/siteimg/yi-pic.png" width="25" height="25" alt="译文" onclick="OnYiwen('ee805a0e1c53')" id="btnYiwenee805a0e1c53">
+
+                    <script type="text/javascript">
+                        document.getElementById("btnShangxiee805a0e1c53").style.display = "block";
+                    </script>
+
+                    <script type="text/javascript">
+                        document.getElementById("btnZhushiee805a0e1c53").style.display = "block";
+                    </script>
+
+                    <script type="text/javascript">
+                        document.getElementById("btnYiwenee805a0e1c53").style.display = "block";
+                    </script>
+
+               </div>
+               <p><a style="font-size:18px; line-height:22px; height:22px;" href="/shiwenv_ee805a0e1c53.aspx"><b>寺人披见文公</b></a></p>
+               <p class="source"><a href="/authorv.aspx?name=%e5%b7%a6%e4%b8%98%e6%98%8e" target="_blank">左丘明</a><a href="https://so.gushiwen.cn/shiwens/default.aspx?cstr=%e5%85%88%e7%a7%a6">〔先秦〕</a></p>
+                <div class="contson" id="contsonee805a0e1c53">
+                    　　吕、郤畏逼，将焚公宫而弑晋侯。寺人披请见。公使让之，且辞焉，曰：“蒲城之役，君命一宿，女即至。其后余从狄君以田渭滨，女为惠公来求杀余，命女三宿，女中宿至。虽有君命何其速也？夫袪犹在，女其行乎！”对曰：“臣谓君之入也，其知之矣。若犹未也，又将及难。君命无二，古之制也。除君之恶，唯力是视。蒲人、狄人、余何有焉？即位，其无蒲、狄乎！齐桓公置射钩，而使管仲相。君若易之，何辱命焉？行者甚众，岂唯刑臣？”公见之，以难告。晋侯潜会秦伯于王城。己丑晦，公宫火。瑕甥、郤芮不获公，乃如河上，秦伯诱而杀之。
+                </div>
+          </div>
+          <div class="tool">
+            <div class="shoucang"><img id="likeImg72187" name="1" onload="selectLike(72187)" onclick="changeLike(72187,'352EFDF463C6A386','http://so.gushiwen.cn/shiwenv.aspx?id=4c5705b99143')" src="https://song.gushiwen.cn/siteimg/shou-cang.png" alt="收藏" width="19" height="19"></div>
+            <div class="toolpinglun"><a href="https://so.gushiwen.cn/app/DefaultGwd.aspx"><img src="https://song.gushiwen.cn/siteimg/down-load.png" alt="下载" width="19" height="19"></a></div>
+
+              <div class="toolpinglun"><a href="javascript:Play('ee805a0e1c53','http://so.gushiwen.cn/shiwenv.aspx?id=4c5705b99143')"><img id="speakerimgee805a0e1c53" src="https://song.gushiwen.cn/siteimg/speak-er.png" alt="" width="19" height="19"></a></div>
+
+              <div class="toolpinglun"><a href="https://so.gushiwen.cn/shiwenv_ee805a0e1c53.aspx"><img src="https://song.gushiwen.cn/siteimg/tool-more.png" alt="详情" width="19" height="19"></a></div>
+                <div class="jiucuo"><a href="/jiucuo.aspx?u=%e8%af%97%e6%96%87ee805a0e1c53%e3%80%8a%e5%af%ba%e4%ba%ba%e6%8a%ab%e8%a7%81%e6%96%87%e5%85%ac%e3%80%8b" target="_blank">完善</a></div>
+            </div>
+            <div id="toolPlayee805a0e1c53" style=" display:none;clear:both;"></div>
+        </div>
+
+
+<div style="clear:both; margin-top:20px; float:left; width:670px; background-color:#F0EFE2; height:auto;">
+<div>
+    <div>
+        <div style="padding-left:0px;">
+            <div id="hgfjss">
+                <iframe width="670" frameborder="0" height="200" scrolling="no" src="#"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="//enennsa.gushiwen.cn/common/t/onpn/openjs/n/production/ppd.js"></script>
+</div>
+
+<div id="threeWeixin" style="display:none;height: 100%;width: 100%;left: 0;top: 0;bottom: 0;position: fixed;background: rgba(0, 0, 0, 0.5);filter: alpha(opacity = 50);">
+    <div class="hide-center" id="hide-center">
+        <div id="formhead">
+            <div id="formhead-title">
+                <span style=" float:left; font-size:18px; margin-left:46px; margin-top:5px;">关注微信公众号</span>
+                <span style=" float:left; clear:both; color:#999999; font-weight:normal; font-size:12px;margin-left:61px; margin-top:10px;">精选内容每周推送</span>
+            </div>
+            <button type="button" id="close">X</button>
+        </div>
+        <div id="formbody">
+            <img id="erweimaCanshu" width="200" height="200" src="" alt="">
+        </div>
+    </div>
+
+</div>
+
+
+<!--<div id="threeWeixin2" style="height: 100%; width: 100%; left: 0px; top: 0px; bottom: 0px; position: fixed; background: rgba(0, 0, 0, 0.5); display: none;">-->
+<!--    <div class="hide-center" id="hide-center2">-->
+<!--        <div id="formhead2">-->
+<!--            <div id="formhead-title2">-->
+<!--                <span style=" float:left; font-size:18px; margin-left:55px; margin-top:5px;">微信扫码登录</span>-->
+<!--                <span style=" float:left; clear:both; color:#999999; font-weight:normal; font-size:12px;margin-left:32px; margin-top:10px;">首次需关注公众号 |</span><a style="color:#999999; float:left; margin-left:5px; font-size:12px; font-weight:normal; margin-top:10px;" href="/user/login.aspx?from=http://so.gushiwen.cn/shiwenv.aspx?id=4c5705b99143">账号登录</a>-->
+<!--            </div>-->
+<!--            <button type="button" id="close2">X</button>-->
+<!--        </div>-->
+<!--        <div id="formbody2">-->
+<!--            <img id="erweimaCanshu2" width="200" height="200" src="https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=gQE_7zwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyWUxXZlJDbGVkN2kxSVRidGh5MWgAAgQ3PnZiAwQAjScA" alt="">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+<!--<script type="text/javascript">-->
+<!--    //取得cookie值-->
+<!--    function getCookie(name) {-->
+<!--        var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");-->
+
+<!--        if (arr = document.cookie.match(reg))-->
+
+<!--            return unescape(arr[2]);-->
+<!--        else-->
+<!--            return null;-->
+<!--    }-->
+
+<!--    $("#close").click(function () {-->
+<!--        $("#threeWeixin").fadeOut("slow");-->
+<!--        clearInterval(intervalErweima);-->
+<!--        intervalErweima2 = null;-->
+<!--    })-->
+
+<!--    $("#close2").click(function () {-->
+<!--        $("#threeWeixin2").fadeOut("slow");-->
+<!--        clearInterval(intervalErweima2);-->
+<!--        intervalErweima2 = null;-->
+<!--    })-->
+<!--    var timesRun = 0;-->
+<!--    var scene_id = Math.floor((Math.random() * 9999999) + 200000000);-->
+
+<!--    //判断是否为登录用户但未关注公众号-->
+<!--    var wxopenid = getCookie('wxopenid');-->
+<!--    var gsw2017user = getCookie('gsw2017user');-->
+<!--    var threeWeixinID = document.getElementById('threeWeixin');-->
+<!--    var threeWeixin2ID = document.getElementById('threeWeixin2');-->
+<!--    var erweimaShow = 0;-->
+<!--    var intervalErweima = null;-->
+<!--    var intervalErweima2 = null;-->
+<!--    //wxopenid为空必然未提醒，提醒后1周内不再提醒。如果账号能保存，那么wxopenid必然能保存-->
+
+
+<!--    $("#html").click(function () {-->
+<!--        //仅改变定位-->
+<!--        if (threeWeixinID.style.display != 'none') {-->
+<!--            return;-->
+<!--        }-->
+<!--        else if (threeWeixin2ID.style.display != 'none') {-->
+<!--            return;-->
+<!--        }-->
+<!--        setTimeout(showErweima, 1000);-->
+<!--    })-->
+
+<!--    function showErweima() {-->
+<!--        if (document.hidden) {-->
+<!--            return;-->
+<!--        }-->
+
+<!--        if (gsw2017user != null && getCookie('login') != null && wxopenid == null && erweimaShow == 0) {-->
+
+<!--            //获取二维码-->
+<!--            var xmlhttp;-->
+<!--            if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari-->
+<!--                xmlhttp = new XMLHttpRequest();-->
+<!--            }-->
+<!--            else {// code for IE6, IE5-->
+<!--                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");-->
+<!--            }-->
+<!--            xmlhttp.onreadystatechange = function () {-->
+<!--                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {-->
+<!--                    document.getElementById('erweimaCanshu').src = "https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=" + xmlhttp.responseText;-->
+<!--                }-->
+<!--            }-->
+<!--            xmlhttp.open("GET", "/getTicket.aspx?scene_id=" + scene_id, false);-->
+<!--            xmlhttp.send();-->
+
+<!--            $("#threeWeixin").fadeIn("slow");-->
+<!--            timesRun = 0;-->
+
+<!--            //判断码是否被扫-->
+<!--            intervalErweima = setInterval("selectErweima()", "2000");-->
+
+<!--        }-->
+<!--        else if (gsw2017user == null && getCookie('login') != null && erweimaShow == 0) {-->
+
+<!--            //获取二维码-->
+<!--            if (getCookie('ticketStr') != null && getCookie('ticketStr').indexOf("|") > 0) {-->
+<!--                var ticketStr = getCookie('ticketStr').split('|');-->
+<!--                scene_id = ticketStr[0];-->
+<!--                document.getElementById('erweimaCanshu2').src = "https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=" + ticketStr[1];-->
+<!--            }-->
+<!--            else {-->
+<!--                var xmlhttp;-->
+<!--                if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari-->
+<!--                    xmlhttp = new XMLHttpRequest();-->
+<!--                }-->
+<!--                else {// code for IE6, IE5-->
+<!--                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");-->
+<!--                }-->
+<!--                xmlhttp.onreadystatechange = function () {-->
+<!--                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {-->
+<!--                        document.getElementById('erweimaCanshu2').src = "https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=" + xmlhttp.responseText;-->
+<!--                    }-->
+<!--                }-->
+<!--                xmlhttp.open("GET", "/getTicket.aspx?scene_id=" + scene_id, false);-->
+<!--                xmlhttp.send();-->
+<!--            }-->
+
+<!--            $("#threeWeixin2").fadeIn("slow");-->
+<!--            timesRun = 0;-->
+
+<!--            //判断码是否被扫-->
+<!--            intervalErweima2 = setInterval("selectErweima2()", "2000");-->
+
+<!--        }-->
+<!--    }-->
+
+
+
+<!--    //判断码是否被扫-->
+<!--    function selectErweima2() {-->
+<!--        //60秒后停止-->
+<!--        timesRun = timesRun + 1;-->
+<!--        if (timesRun > 60) {-->
+<!--            $("#threeWeixin2").fadeOut("slow");-->
+
+<!--            clearInterval(intervalErweima2);-->
+<!--            intervalErweima2 = null;-->
+<!--        }-->
+
+<!--        var xmlhttp;-->
+<!--        if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari-->
+<!--            xmlhttp = new XMLHttpRequest();-->
+<!--        }-->
+<!--        else {// code for IE6, IE5-->
+<!--            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");-->
+<!--        }-->
+<!--        xmlhttp.onreadystatechange = function () {-->
+<!--            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {-->
+<!--                if (xmlhttp.responseText == "1") {-->
+<!--                    $("#threeWeixin2").fadeOut("slow");-->
+<!--                    erweimaShow = 1;-->
+<!--                    clearInterval(intervalErweima2);-->
+<!--                    intervalErweima2 = null;-->
+<!--                }-->
+<!--            }-->
+<!--        }-->
+<!--        xmlhttp.open("POST", "/user/getEventLogin.aspx?&scene_id=" + scene_id, false);-->
+<!--        xmlhttp.send();-->
+
+<!--    }-->
+
+<!--    function selectErweima() {-->
+<!--        //60秒后停止-->
+<!--        timesRun = timesRun + 1;-->
+<!--        if (timesRun > 60) {-->
+<!--            $("#threeWeixin").fadeOut("slow");-->
+<!--            clearInterval(intervalErweima);-->
+<!--            intervalErweima = null;-->
+<!--        }-->
+
+<!--        var xmlhttp;-->
+<!--        if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari-->
+<!--            xmlhttp = new XMLHttpRequest();-->
+<!--        }-->
+<!--        else {// code for IE6, IE5-->
+<!--            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");-->
+<!--        }-->
+<!--        xmlhttp.onreadystatechange = function () {-->
+<!--            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {-->
+<!--                if (xmlhttp.responseText != "未扫码") {-->
+
+<!--                    $("#threeWeixin").fadeOut("slow");-->
+<!--                    erweimaShow = 1;-->
+<!--                    clearInterval(intervalErweima);-->
+<!--                    intervalErweima = null;-->
+<!--                }-->
+<!--            }-->
+<!--        }-->
+<!--        xmlhttp.open("POST", "/getEventKey.aspx?&scene_id=" + scene_id, false);-->
+<!--        xmlhttp.send();-->
+<!--    }-->
+
+<!--</script>-->
+<!--    </div>-->
+<!--    <div class="right">-->
+<!--        <div class="abcd">-->
+
+<!--        </div>-->
+<!--    </div>-->
+
+
+<div class="main4">
+    © 2022 <a href="http://www.boygirs.com">明水洞天</a>
+<!--    | <a href="https://so.gushiwen.cn/shiwens/">诗文</a>-->
+<!--    | <a href="https://so.gushiwen.cn/mingjus/">名句</a> -->
+<!--    | <a href="https://so.gushiwen.cn/authors/">作者</a> -->
+<!--    | <a href="https://so.gushiwen.cn/guwen/">古籍</a> -->
+<!--    | <a href="/jiucuo.aspx?u=" target="_blank" rel="nofollow">纠错</a>-->
+</div>
+
+
+<script type="text/javascript">
+    window.onload = function () {
+        setIframeHeight(document.getElementById('external-frame'));
+    };
+        </script>
+
+<script defer="defer" src="static/js/skinso20220222.js" type="text/javascript"></script>
+
+
+<div class="aihuaci" style="display: none;"><div class="aihuaciheader"><p></p><button id="aihuacihead">&nbsp;</button><span></span><button id="aihuaciclose"></button></div><div class="aihuacimain"><div class="aihuacimainloadbox"><img src="https://song.gushiwen.cn/siteimg/loading.gif" width="32" height="32"></div><iframe frameborder="0" id="aihuaciiframe" name="aihuaciiframe"></iframe><iframe frameborder="0" id="aihuaciadvert" name="aihuaciadvert" style="height: 0px; width: 100%;"></iframe></div><div class="aihuacibottom"><p></p><div><button id="aihuacibottombtn"></button></div><a href="//www.gushiwen.cn/" target="_blank">明水洞天</a><span></span></div><button class="aihuacisidebar" style="width: 5px; height: 100%; top: 0px; left: -2px; background: black; cursor: col-resize;"></button><button class="aihuacisidebar" style="width: 100%; height: 5px; top: -2px; left: 0px; background: black; cursor: row-resize;"></button><button class="aihuacisidebar" style="width: 5px; height: 100%; top: 0px; right: -2px; background: black; cursor: col-resize;"></button><button class="aihuacisidebar" style="width: 100%; height: 5px; left: 0px; bottom: -2px; background: black; cursor: row-resize;"></button><button class="aihuacisidepart" style="top: -2px; left: -2px; cursor: nw-resize;"></button><button class="aihuacisidepart" style="top: -2px; right: -2px; cursor: ne-resize;"></button><button class="aihuacisidepart" style="left: -2px; bottom: -2px; cursor: sw-resize;"></button><button class="aihuacisidepart" style="right: -2px; bottom: -2px; cursor: se-resize;"></button></div><div class="blankmask" style="display: none;"></div><form target="aihuaciiframe" method="post" action="/dict/fancha.aspx" accept-charset="utf-8" class="aihuacitollbar" style="width: 40px; display: none;"><input type="hidden" id="aihuacikeyword" name="z"><input type="hidden" name="url" value="so.gushiwen.cn/shiwenv_4c5705b99143.aspx"><ul><li toolid="10" params="320,330,&amp;#37322;&amp;#20041;" style="background-position: 0px 0px;"><img src="" title="释义"><button type="button">释义</button></li></ul><span></span></form></body>
+</html>

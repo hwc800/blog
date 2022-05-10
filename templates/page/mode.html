@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>MarkDown</title>
+		<!--适配手机-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="shortcut icon" href="static/ico/qyz.jpg">
+		<!--使用bootstrap的样式，比较好看-->
+		<link href="static/markdown/bootstrap.min.css" rel="stylesheet">
+		<style>
+			h1 {
+				font-family: Consolas, monaco, monospace;
+				font-size: 23px;
+				font-style: normal;
+				font-variant: normal;
+				font-weight: 500;
+				line-height: 23px;
+			}
+
+			h3 {
+				font-family: Consolas, monaco, monospace;
+				font-size: 17px;
+				font-style: normal;
+				font-variant: normal;
+				font-weight: 500;
+				line-height: 23px;
+			}
+
+			p {
+				font-family: Consolas, monaco, monospace;
+				font-size: 14px;
+				font-style: normal;
+				font-variant: normal;
+				font-weight: 400;
+				line-height: 23px;
+			}
+
+			blockquote {
+				font-family: Consolas, monaco, monospace;
+				font-size: 17px;
+				font-style: normal;
+				font-variant: normal;
+				font-weight: 400;
+				line-height: 23px;
+			}
+
+			pre {
+				font-family: Consolas, monaco, monospace;
+				font-size: 12px;
+				font-style: normal;
+				font-variant: normal;
+				font-weight: 400;
+				line-height: 23px;
+			}
+
+			#text-input {
+				margin-left: 4%;
+				padding: 15px;
+				height: 1200px;
+				width: 96%;
+				border: none;
+				resize: none;
+			}
+
+			#preview {
+				padding: 15px;
+				width: 96%;
+				border: none;
+				height: 1200px;
+				overflow-y:auto;
+				overflow-x:auto;
+			}
+
+			body {
+				overflow-x: none;
+			}
+		</style>
+	</head>
+	<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+			<script>
+		jQuery.noConflict();
+		// 使用 jQuery
+		jQuery("div p").hide();
+
+			function saved_to_server(content,content_title,article_introduce){
+				jQuery.ajax({
+					type:"post",
+					url:"/box_content",
+					dataType:"json",
+					traditional:true,
+					headers:{'X-CSRFToken':'{{ csrf_token }}'},
+					data:{
+						"content": content,
+						"content_title": content_title,
+						"article_introduce": article_introduce,
+					},
+					success:function(data){
+						if(data=1){alert("成功");}
+					}
+				})
+				}
+		</script>
+	<body>
+		<center>
+			<h1><input id="content_title" type="text" value="请填写标题"></h1>
+			<textarea id="content_introduce" style="width:700px;height:100px;">文章简介</textarea>
+			<button onclick="saved();style.display='none';" id="saved">保存</button>
+			<button onclick="edit();style.display='none';" id="edit" style="display:none;">编辑</button>
+		</center>
+		<div class="row">
+			<div id="printNum">
+				<div class="col-md-6">
+					<textarea class="bg-success" id="text-input" oninput="this.editor.update()" rows="6">Type **Markdown** here.</textarea>
+				</div>
+			</div>
+			<div id="ShowPage">
+				<div class="col-md-6">
+					<div id="preview" class="bg-primary" rows="6"> </div>
+				</div>
+			</div>
+		</div>
+
+		<script src="static/markdown/markdown.min.js"></script>
+		<script>
+			function Editor(input, preview) {
+				this.update = function() {
+					preview.innerHTML = markdown.toHTML(input.value);
+				};
+				input.editor = this;
+				this.update();
+			}
+			var $ = function(id) {
+				return document.getElementById(id);
+			};
+			new Editor($("text-input"), $("preview"));
+		</script>
+		<script>
+			function saved(){
+				document.getElementById("printNum").style.display="none";
+				document.getElementById("edit").style.display="inline";
+				document.getElementById("ShowPage").style.margin="0 0 0 30%";
+				var content = document.getElementById("text-input").value;
+				var content_title = document.getElementById("content_title").value;
+				var article_introduce = document.getElementById("content_introduce").value;
+				alert(article_introduce)
+				saved_to_server(content,content_title,article_introduce);
+
+				};
+			function edit(){
+				document.getElementById("printNum").style.display="inline";
+				document.getElementById("saved").style.display="inline";
+			};
+		</script>
+	</body>
+</html>

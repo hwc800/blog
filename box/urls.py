@@ -10,4 +10,5 @@ urlpatterns = [
     url(r'^box_mode', views.box_mode, name='box_mode'),
     url(r'^box_index', views.box_index, name='box_index'),
     url(r'^box_show_mode', views.box_show_mode, name='box_show_mode'),
+    url(r'^', views.box_index),
 ]

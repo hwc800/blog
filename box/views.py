@@ -87,7 +87,6 @@ def box_show_mode(requests):
 def user_index(requests):
     if requests.method == 'GET':
         user_id = requests.COOKIES.get("user_id")
-        print(user_id)
         result = db.article_title(user_id="%s" % user_id)
         page = 0
         data = {}

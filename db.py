@@ -323,10 +323,13 @@ def select_user_comment(comment_link):
     return result
 
 
-def article_title():
+def article_title(user_id=None):
     """查询文章简介表"""
     files = ["user_id", "article_title", "article_introduce", "article_link", "date", "article_id"]
     sql = "select user_id, article_title, article_introduce, article_link, date, article_id from %s;" % (config_db.user_data)
+    if user_id:
+        sql = "select user_id, article_title, article_introduce, article_link, date, article_id from %s where user_id=%s;" % (config_db.user_data, user_id)
+    print(sql)
     db = MySql(config_db.HOST, config_db.USER, config_db.PWD, config_db.DATABASE)
     # 操作表类
     table = db.usetable(config_db.user_data, config_db.DATABASE)
@@ -365,7 +368,4 @@ def select(table, **kwargs):
         kes.append({key: kwargs[key], "op": "="})
     result = table.multiple_select(kes)
     return result
-
-
-
 

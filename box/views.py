@@ -14,6 +14,8 @@ def box_mode(requests):
     if requests.method == 'GET':
         rep = render(requests, "page/mode.html")
         rep.set_cookie("user_id", 10000)
+        rep.set_cookie("is_log", "sdffffodxx324mkfjigo")
+        rep.set_cookie("is_root", "10re0gr4##**ty45555cccdert2143546##@%^%00")
         return rep
 
 
@@ -28,10 +30,11 @@ def box_index(requests):
         content = {
             "data": data
         }
-        rep = render(requests, "mytemplates/box_index.html")
+        rep = render(requests, "mytemplates/box_index.html", content)
         rep.set_cookie("user_id", 10000)
-
-        return render(requests, "mytemplates/box_index.html", content)
+        rep.set_cookie("is_log", "sdffffodxx324mkfjigo")
+        rep.set_cookie("is_root", "10re0gr4##**ty45555cccdert2143546##@%^%00")
+        return rep
 
 
 def box_content(requests):
@@ -51,7 +54,7 @@ def box_content(requests):
         # 插入导航表
         db.insert(config_db.user_data, article_id=content_id, user_id=user_id, article_title=content_title, article_introduce=article_introduce, date=content_date)
 
-        return render(requests, "page/show_mode.html", data)
+        return JsonResponse({"data": "no"})
 
 
 def box_show_mode(requests):
@@ -80,3 +83,19 @@ def box_show_mode(requests):
         }
         return render(requests, "page/show_mode.html", data)
 
+
+def user_index(requests):
+    if requests.method == 'GET':
+        user_id = requests.COOKIES.get("user_id")
+        print(user_id)
+        result = db.article_title(user_id="%s" % user_id)
+        page = 0
+        data = {}
+        for app in result:
+            data[page] = app
+            page += 1
+        content = {
+            "data": data
+        }
+        return render(requests, "page/user_index.html", content)
+        # return JsonResponse({"data": "no"})

@@ -8,7 +8,6 @@ class DatabaseOperation(object):
     def __init__(self, ip, user, pwd, database, charset="utf8", port=3306):
         conn = pymysql.connect(host=ip, password=pwd, database=database, user=user, charset=charset, port=port)
         self.conn = conn
-        pass
 
     def creat_table(self, table_name=None, fiels=None, primary_key="id"):
         """
@@ -183,11 +182,11 @@ if __name__ == "__main__":
     }
 
     version_code_files = {
-        "id": "int(10)",
-        "authority_id": "int(10)",
+        "user_id": "VARCHAR(250)",
+        "authority_id": "VARCHAR(250)",
         "user_name": "VARCHAR(250)",
-        "user_sex_id": "int(10)",
-        "user_age": "int(10)",
+        "user_sex_id": "VARCHAR(250)",
+        "user_age": "VARCHAR(250)",
         "email": "VARCHAR(250)",
     }
     # 这个表用来标记性别，性别表：1 男  2 女
@@ -227,7 +226,7 @@ if __name__ == "__main__":
     }
     #
     # conn = DatabaseOperation(ip="118.195.188.25", pwd="123456789", user="root", database="hwc")
-    # conn.creat_table(table_name="user_comment", fiels=user_comment, primary_key="comment_id")
+    # conn.creat_table(table_name="user_mesg", fiels=version_code_files, primary_key="user_id")
 
     # conn = DatabaseOperation(ip="9.135.94.3", pwd="123456789", user="root", database="version_num")
     # conn.change_field_name(table_name="version_code", old_name="center_number", new_name="top_fourth", new_field_class="varchar(125)")
@@ -236,7 +235,9 @@ if __name__ == "__main__":
     # conn.updata_table(table_name="build_version", need_update_file_names_and_datas={"third": 4, "fourth": 1, "TopThree": "0.8.4"}, where_is_files={"id": 15})
     # conn.insert(table_name="build_version", need_insert_fiels_and_data={"third": 1, "fourth": 1, "TopThree": "0.7.1", "TopTwo": "0.7", "tag": "stable", "version": "0.7.1.1"})
 
-
+    """
+    systemctl restart mysqld 数据库重启
+    """
     """
     CREATE TABLE IF NOT EXISTS `runoob_tbl`(
        `runoob_id` INT UNSIGNED AUTO_INCREMENT,

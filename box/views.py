@@ -97,4 +97,3 @@ def user_index(requests):
             "data": data
         }
         return render(requests, "page/user_index.html", content)
-        # return JsonResponse({"data": "no"})

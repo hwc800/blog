@@ -90,13 +90,13 @@
         <input type="button" class="btn" id="searchTxt" value="搜索">
     </div>
     <nav id="topnav">
-      <ul>
-        <a href="/" title="首页" class="nav_first" id="topnav_current">首页</a>
-              <a class="nav_4" href="/mood/index" title="心情随笔">心情随笔</a>
-              <a class="nav_12" href="/box_mode" title="技术分享">技术分享</a>
-              <a class="nav_16" href="/index/message" title="Blog留言">Blog留言</a>
-              <a class="nav_1" href="/about/index" title="关于我">关于我</a>
-      </ul>
+        <ul>
+          <a href="/box_index" title="首页" class="nav_first" id="topnav_current">首页</a>
+          <a class="nav_4" href="/user_index" title="心情随笔">我的</a>
+          <a class="nav_12" href="/box_mode" title="技术分享">技术分享</a>
+          <a class="nav_16" href="/index/message" title="Blog留言">Blog留言</a>
+          <a class="nav_1" href="/about/index" title="关于我">关于我</a>
+        </ul>
     </nav>
   </header>
   <link rel="stylesheet" href="static/box_static/luara.top.css">
@@ -107,45 +107,38 @@
       .blog_more a i{ background-position:-189px  -621px; width: 11px; height: 12px; display: inline-block; margin-left: 10px;}
   </style>
   <article>
-          <div class="topnews">
-<!--              <div class="blogs">-->
-                  {% for key,value in data.items %}
-                  <div class="blogs">
-                      <figure>
-                          <a href="{{ value.article_link }}" title="{{ value.article_title }}" target="_blank">
-                          <img src="static/ico/msdt1.jpg" original="static/ico/msdt1.jpg" style="width: 167.5px; height: 137px; display: block;" alt="{{ value.article_title }}">
-                          </a>
-                      </figure>
-                      <ul>
-                          <h3><a href="/box_show_mode?article_id={{ value.article_id }}" title="{{ value.article_title }}" target="_blank">{{ value.article_title }}</a></h3>
-                          <p>
-                              {{ value.article_introduce }}
-                              <a href="/box_show_mode?article_id={{ value.article_id }}" target="_blank" style="color: #759b08;padding-left:5px;">[详情]</a>
-                          </p>
-                          <p class="autor">
-                              <span class="lm f_l"><a href="/box_mode" style="color: #759b08">技术分享</a></span>
-                              <span class="dtime f_l">{{ value.date }}</span>
-                              <input class="zan_cookie" type="hidden" value="2">
-                              <input class="zan_newsid" type="hidden" value="502">
-                              <span class="label_bottom f_r" style="padding-left: 0;">
-                                  <a href="javascript:void(0)" onclick="return false;" class="yz_zan" style="">28</a>
-                              </span>
-                              <span class="viewnum f_r">1.0k</span>
-                              <span class="pingl f_r" style="margin-right: 0;">
-                                  <a href="https://www.boygirs.com/detail/502.html#SOHUCS">
-                                     <span id="sourceId::502" class="cy_cmt_count">2</span>
-                                  </a>
-                              </span>
-                          </p>
-                      </ul>
-                  </div>
-                  {% endfor %}
-<!--              </div>-->
-
-                          <!--<div class="blog_more"><a href="javascript:;" onclick="getShow(this)" ><span>点击查看更多>></span></a><i></i></div>
-              <div class="blog_more" id="alreadyread" style="display:none"><a href="javascript:;" class="finish">
-                  <span>所有文章已加载完</span></a>
-              </div>-->
+          <div class="topnews">]=[
+              {% for key,value in data.items %}
+              <div class="blogs">
+                  <figure>
+                      <a href="{{ value.article_link }}" title="{{ value.article_title }}" target="_blank">
+                      <img src="static/ico/msdt1.jpg" original="static/ico/msdt1.jpg" style="width: 167.5px; height: 137px; display: block;" alt="{{ value.article_title }}">
+                      </a>
+                  </figure>
+                  <ul>
+                      <h3><a href="/box_show_mode?article_id={{ value.article_id }}" title="{{ value.article_title }}" target="_blank">{{ value.article_title }}</a></h3>
+                      <p>
+                          {{ value.article_introduce }}
+                          <a href="/box_show_mode?article_id={{ value.article_id }}" target="_blank" style="color: #759b08;padding-left:5px;">[详情]</a>
+                      </p>
+                      <p class="autor">
+                          <span class="lm f_l"><a href="/box_mode" style="color: #759b08">技术分享</a></span>
+                          <span class="dtime f_l">{{ value.date }}</span>
+                          <input class="zan_cookie" type="hidden" value="2">
+                          <input class="zan_newsid" type="hidden" value="502">
+                          <span class="label_bottom f_r" style="padding-left: 0;">
+                              <a href="javascript:void(0)" onclick="return false;" class="yz_zan" style="">28</a>
+                          </span>
+                          <span class="viewnum f_r">1.0k</span>
+                          <span class="pingl f_r" style="margin-right: 0;">
+                              <a href="https://www.boygirs.com/detail/502.html#SOHUCS">
+                                 <span id="sourceId::502" class="cy_cmt_count">2</span>
+                              </a>
+                          </span>
+                      </p>
+                  </ul>
+              </div>
+              {% endfor %}
           </div>
       </div>
   <style type="text/css">

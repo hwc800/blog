@@ -78,33 +78,33 @@
 			}
 		</style>
 	</head>
-	<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-			<script>
-		jQuery.noConflict();
-		// 使用 jQuery
-		jQuery("div p").hide();
+	<script type="text/javascript" src="static/box_static/jquery_3.6.0.min.js"></script>
+	<script>
+	jQuery.noConflict();
+	// 使用 jQuery
+	jQuery("div p").hide();
 
-			function saved_to_server(content,content_title,article_introduce){
-				jQuery.ajax({
-					type:"post",
-					url:"/box_content",
-					dataType:"json",
-					traditional:true,
-					headers:{'X-CSRFToken':'{{ csrf_token }}'},
-					data:{
-						"content": content,
-						"content_title": content_title,
-						"article_introduce": article_introduce,
-					},
-					success:function(data){
-						if(data=1){
-						alert("http://www.boygirs.com/user_index");
-						window.location.href='http://www.boygirs.com/user_index';
-						}
+		function saved_to_server(content,content_title,article_introduce){
+			jQuery.ajax({
+				type:"post",
+				url:"/box_content",
+				dataType:"json",
+				traditional:true,
+				headers:{'X-CSRFToken':'{{ csrf_token }}'},
+				data:{
+					"content": content,
+					"content_title": content_title,
+					"article_introduce": article_introduce,
+				},
+				success:function(data){
+					if(data=1){
+					alert("http://www.boygirs.com/user_index");
+					window.location.href='http://www.boygirs.com/user_index';
 					}
-				})
 				}
-		</script>
+			})
+			}
+	</script>
 	<body>
 		<center>
 			<h1><input id="content_title" type="text" value="请填写标题"></h1>

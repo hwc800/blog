@@ -11,5 +11,7 @@ urlpatterns = [
     url(r'^box_index', views.box_index, name='box_index'),
     url(r'^box_show_mode', views.box_show_mode, name='box_show_mode'),
     url(r'^user_index', views.user_index, name='user_index'),
-    url(r'^', views.box_index),
+    url(r'^login', views.login, name='login'),
+    url(r'^set_token', views.set_token, name='set_token'),
+    # url(r'^', views.box_index),
 ]

@@ -1,4 +1,7 @@
-from django.http import JsonResponse
+import json
+
+import requests as requests
+from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render
 import db
 import blog.config_db as config_db
@@ -13,9 +16,6 @@ def root_login(requests):
 def box_mode(requests):
     if requests.method == 'GET':
         rep = render(requests, "page/mode.html")
-        rep.set_cookie("user_id", 10000)
-        rep.set_cookie("is_log", "sdffffodxx324mkfjigo")
-        rep.set_cookie("is_root", "10re0gr4##**ty45555cccdert2143546##@%^%00")
         return rep
 
 
@@ -31,7 +31,6 @@ def box_index(requests):
             "data": data
         }
         rep = render(requests, "mytemplates/box_index.html", content)
-        rep.set_cookie("user_id", 10000)
         rep.set_cookie("is_log", "sdffffodxx324mkfjigo")
         rep.set_cookie("is_root", "10re0gr4##**ty45555cccdert2143546##@%^%00")
         return rep
@@ -86,8 +85,18 @@ def box_show_mode(requests):
 
 def user_index(requests):
     if requests.method == 'GET':
-        user_id = requests.COOKIES.get("user_id")
-        result = db.article_title(user_id="%s" % user_id)
+        from blog import token as tk
+
+        token = requests.COOKIES.get("token")
+        msg_token = tk.check_token_and(token)
+        if not msg_token:
+            # 严重登陆状态
+            return JsonResponse({"data": "no"})
+
+        try:
+            result = db.article_title(user_id="%s" % msg_token["user_id"])
+        except:
+            return render(requests, "page/user_index.html")
         page = 0
         data = {}
         for app in result:
@@ -97,3 +106,32 @@ def user_index(requests):
             "data": data
         }
         return render(requests, "page/user_index.html", content)
+
+
+def login(requests):
+    if requests.method == "GET":
+        return render(requests, "page/login/login.html")
+
+
+def set_token(requests):
+    # 严重登陆
+    if requests.method == "POST":
+        user_name = requests.POST.get("user_name")
+        password = requests.POST.get("password")
+        result = db.select(config_db.user_table, user_name=user_name)
+        if not result:
+            return JsonResponse({"data": "no"})
+        if password != result[0]["password"]:
+            return JsonResponse({"data": "no"})
+
+        from blog import token as tk
+
+        token = tk.get_token(user_id=result[0]["user_id"])
+        res = HttpResponse(json.dumps({"data": "ok"}), content_type='application/json')
+        res.cookies.load({"token": token})
+
+        return res
+
+
+
+

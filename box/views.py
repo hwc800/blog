@@ -53,14 +53,6 @@ def box_mode(requests):
 
 def box_index(requests):
     if requests.method == 'GET':
-        from blog import token as tk
-
-        token = requests.COOKIES.get("token")
-        msg_token = tk.check_token_and(token)
-
-        if not msg_token:
-            # 验证登陆状态
-            return HttpResponseRedirect("/login")
 
         result = db.article_title()
         page = 0

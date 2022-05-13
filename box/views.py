@@ -99,6 +99,15 @@ def box_content(requests):
 
 def box_show_mode(requests):
     if requests.method == "GET":
+        from blog import token as tk
+
+        token = requests.COOKIES.get("token")
+        msg_token = tk.check_token_and(token)
+
+        if not msg_token:
+            # 验证登陆状态
+            return HttpResponseRedirect("/login")
+
         article_id = requests.GET.get("article_id")
 
         if not article_id:

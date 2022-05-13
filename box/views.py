@@ -1,7 +1,7 @@
 import json
 
 import requests as requests
-from django.http import JsonResponse, HttpResponse
+from django.http import JsonResponse, HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 import db
 import blog.config_db as config_db
@@ -91,7 +91,7 @@ def user_index(requests):
         msg_token = tk.check_token_and(token)
         if not msg_token:
             # 严重登陆状态
-            return JsonResponse({"data": "no"})
+            return HttpResponseRedirect("/login")
 
         try:
             result = db.article_title(user_id="%s" % msg_token["user_id"])

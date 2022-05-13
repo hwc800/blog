@@ -1,6 +1,6 @@
 
 HOST = "118.195.188.25"
-PWD = "123456789"
+PWD = "qs@A190!=Lkisje.stfp?#;"
 USER = "root"
 DATABASE = "hwc"
 

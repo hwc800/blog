@@ -6,6 +6,7 @@ from box import views
 
 urlpatterns = [
     url(r'^comment', views.comment, name='comment'),
+    url(r'^about', views.about, name='about'),
     url(r'^box_content', views.box_content, name='box_content'),
     url(r'^box_mode', views.box_mode, name='box_mode'),
     url(r'^box_index', views.box_index, name='box_index'),

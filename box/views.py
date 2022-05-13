@@ -19,7 +19,7 @@ def comment(requests):
             # 验证登陆状态
             return HttpResponseRedirect("/login")
 
-        return render(requests, "page/login/comment.html")
+        return render(requests, "page/comment.html")
 
 
 def about(requests):
@@ -33,7 +33,7 @@ def about(requests):
             # 验证登陆状态
             return HttpResponseRedirect("/login")
 
-        return render(requests, "page/login/about.html")
+        return render(requests, "page/about.html")
 
 
 def box_mode(requests):

@@ -97,10 +97,10 @@
 					"article_introduce": article_introduce,
 				},
 				success:function(data){
-					if(data=="ok"){
+					if(data.data=="ok"){
 						window.location.href='http://www.boygirs.com/user_index';
 					}else{
-					alert("提交失败");
+					    alert("提交失败");
 					}
 				}
 			})

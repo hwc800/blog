@@ -5,7 +5,7 @@ from box import views
 
 
 urlpatterns = [
-    url(r'^root_login', views.root_login, name='root_login'),
+    url(r'^comment', views.comment, name='comment'),
     url(r'^box_content', views.box_content, name='box_content'),
     url(r'^box_mode', views.box_mode, name='box_mode'),
     url(r'^box_index', views.box_index, name='box_index'),
@@ -13,5 +13,5 @@ urlpatterns = [
     url(r'^user_index', views.user_index, name='user_index'),
     url(r'^login', views.login, name='login'),
     url(r'^set_token', views.set_token, name='set_token'),
-    # url(r'^', views.box_index),
+    url(r'^', views.box_index),
 ]

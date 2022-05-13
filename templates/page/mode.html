@@ -97,9 +97,10 @@
 					"article_introduce": article_introduce,
 				},
 				success:function(data){
-					if(data=1){
-					alert("http://www.boygirs.com/user_index");
-					window.location.href='http://www.boygirs.com/user_index';
+					if(data=="ok"){
+						window.location.href='http://www.boygirs.com/user_index';
+					}else{
+					alert("提交失败");
 					}
 				}
 			})

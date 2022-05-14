@@ -260,5 +260,14 @@ if __name__ == "__main__":
     sselect * from hwc.user_table as ut, hwc.user_authority as ua, hwc.user_sex as us where ut.user_sex_id=us.sex_id and ut.authority_id=ua.authority_id;
     多表联合查询
     """
+    def srf(url):
+        import requests
+
+        res = requests.get(url=url)
+        print(res)
+
+    url = "http://www.boygirs.com/about"
+    for i in range(100):
+        srf(url)
 
 

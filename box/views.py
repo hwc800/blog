@@ -129,7 +129,7 @@ def box_show_mode(requests):
         }
 
         res = render(requests, "page/show_mode.html", data)
-        res.cookies.set_cookie("article_id", article_id)
+        res.set_cookie("article_id", article_id)
         return res
 
 

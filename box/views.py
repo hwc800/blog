@@ -8,6 +8,7 @@ import blog.config_db as config_db
 
 
 # Create your views here.
+# blog留言
 def comment(requests):
     if requests.method == 'GET':
         from blog import token as tk
@@ -22,12 +23,14 @@ def comment(requests):
         return render(requests, "page/comment.html")
 
 
+# 关于博主
 def about(requests):
     if requests.method == 'GET':
 
         return render(requests, "page/about.html")
 
 
+# 模板
 def box_mode(requests):
     if requests.method == 'GET':
         from blog import token as tk
@@ -43,6 +46,7 @@ def box_mode(requests):
         return rep
 
 
+# 主页
 def box_index(requests):
     if requests.method == 'GET':
 
@@ -62,6 +66,7 @@ def box_index(requests):
         return rep
 
 
+# 存储模板传递的数据
 def box_content(requests):
     import datetime, time
     if requests.method == 'POST':
@@ -89,6 +94,7 @@ def box_content(requests):
         return JsonResponse({"data": "ok"})
 
 
+# 文章详情界面
 def box_show_mode(requests):
     if requests.method == "GET":
 
@@ -121,10 +127,14 @@ def box_show_mode(requests):
             "content": content,
             "title": title,
         }
-        return render(requests, "page/show_mode.html", data)
+
+        res = render(requests, "page/show_mode.html", data)
+        res.cookies.set_cookie("article_id", article_id)
+        return res
 
 
 def user_index(requests):
+    # 我的界面
     if requests.method == 'GET':
         from blog import token as tk
 
@@ -156,7 +166,7 @@ def login(requests):
 
 
 def set_token(requests):
-    # 严重登陆
+    # 验证登陆
     if requests.method == "POST":
         user_name = requests.POST.get("user_name")
         password = requests.POST.get("password")

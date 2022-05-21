@@ -60,10 +60,10 @@ class JwtDemo:
 
 #
 # if __name__ == "__main__":
-    token = get_token(user_id=100)
-    print(token)
-    h, p, f = token.split(".")
-    print(p)
-    g = base64.b64decode(p)
-    print(g)
+#     token = get_token(user_id=100)
+#     print(token)
+#     h, p, f = token.split(".")
+#     print(p)
+#     g = base64.b64decode(p)
+#     print(g)
 

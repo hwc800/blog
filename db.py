@@ -328,7 +328,7 @@ def article_title(user_id=None):
     files = ["user_id", "article_title", "article_introduce", "article_link", "date", "article_id", "view_number", "like_number", "comment_number"]
     sql = "select hwc.user_data.user_id, article_title, article_introduce, article_link, date, hwc.user_data.article_id,view_number,like_number," \
           "comment_number from %s join hwc.user_view_number" \
-              " on hwc.user_data.user_id=%s and hwc.user_data.user_id=hwc.user_view_number.user_id;" % (config_db.user_data, user_id)
+              " on hwc.user_data.user_id=hwc.user_view_number.user_id and hwc.user_data.article_id=hwc.user_view_number.article_id;" % config_db.user_data
     if user_id:
         sql = "select hwc.user_data.user_id, article_title, article_introduce, article_link, date, hwc.user_data.article_id,view_number,like_number," \
               "comment_number from %s join hwc.user_view_number" \

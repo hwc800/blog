@@ -1,6 +1,4 @@
 import json
-
-import requests as requests
 from django.http import JsonResponse, HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 import db
@@ -8,6 +6,7 @@ import blog.config_db as config_db
 from ratelimit.decorators import ratelimit
 
 
+from box import views_function
 # Create your views here.
 # blog留言
 @ratelimit(key='ip', rate='1/2s', block=True)
@@ -137,6 +136,9 @@ def box_show_mode(requests):
 
         res = render(requests, "page/show_mode.html", data)
         res.set_cookie("article_id", article_id)
+
+        views_function.insert_look_or_like_number(article_id, add_view_number=True)
+
         return res
 
 

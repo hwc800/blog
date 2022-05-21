@@ -325,10 +325,15 @@ def select_user_comment(comment_link):
 
 def article_title(user_id=None):
     """查询文章简介表"""
-    files = ["user_id", "article_title", "article_introduce", "article_link", "date", "article_id"]
-    sql = "select user_id, article_title, article_introduce, article_link, date, article_id from %s;" % (config_db.user_data)
+    files = ["user_id", "article_title", "article_introduce", "article_link", "date", "article_id", "view_number", "like_number", "comment_number"]
+    sql = "select hwc.user_data.user_id, article_title, article_introduce, article_link, date, hwc.user_data.article_id,view_number,like_number," \
+          "comment_number from %s join hwc.user_view_number" \
+              " on hwc.user_data.user_id=%s and hwc.user_data.user_id=hwc.user_view_number.user_id;" % (config_db.user_data, user_id)
     if user_id:
-        sql = "select user_id, article_title, article_introduce, article_link, date, article_id from %s where user_id=%s;" % (config_db.user_data, user_id)
+        sql = "select hwc.user_data.user_id, article_title, article_introduce, article_link, date, hwc.user_data.article_id,view_number,like_number," \
+              "comment_number from %s join hwc.user_view_number" \
+              " on hwc.user_data.user_id=%s and hwc.user_data.article_id=hwc.user_view_number.article_id;" % (config_db.user_data, user_id)
+
     db = MySql(config_db.HOST, config_db.USER, config_db.PWD, config_db.DATABASE)
     # 操作表类
     table = db.usetable(config_db.user_data, config_db.DATABASE)
@@ -367,4 +372,5 @@ def select(table, **kwargs):
         kes.append({key: kwargs[key], "op": "="})
     result = table.multiple_select(kes)
     return result
+
 

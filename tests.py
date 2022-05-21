@@ -200,12 +200,12 @@ if __name__ == "__main__":
         "authority": "VARCHAR(250)",
     }
 
-    # 用户评论数据表
+    # 用户评论文章数据表
     user_comment = {
-        "user_id": "int(10)",
-        "comment_link": "text",
+        "user_id": "VARCHAR(250)",
+        "article_id": "VARCHAR(250)",
         "comment": "text",
-        "comment_id": "VARCHAR(250)",
+        "comment_id": "VARCHAR(250)",  # key
         "date": "text"
     }
     # 这个表用来支撑主页，主页回列出所有文章
@@ -224,9 +224,30 @@ if __name__ == "__main__":
         "content": "text",
         "content_date": "text",
     }
-    #
+    # 用户留言   这里开始还未建表
+    guest_book = {
+        "user_id": "VARCHAR(250)",
+        "book": "text",
+        "book_id": "VARCHAR(250)",
+        "date": "text"
+    }
+    # number_of_visits 博客留言表
+    number_of_visits = {
+        "user_id": "VARCHAR(250)",
+        "book": "text",
+        "book_id": "VARCHAR(250)",
+        "date": "text"
+    }
+    # user_view_number 文章浏览量、点瓒数量、评论量
+    user_view_number = {
+        "article_id": "VARCHAR(250)",
+        "user_id": "VARCHAR(250)",
+        "view_number": "VARCHAR(250)",
+        "like_number": "VARCHAR(250)",
+        "comment_number": "VARCHAR(250)",
+    }
     # conn = DatabaseOperation(ip="118.195.188.25", pwd="123456789", user="root", database="hwc")
-    # conn.creat_table(table_name="user_mesg", fiels=version_code_files, primary_key="user_id")
+    # conn.creat_table(table_name="user_view_number", fiels=user_view_number, primary_key="article_id")
 
     # conn = DatabaseOperation(ip="9.135.94.3", pwd="123456789", user="root", database="version_num")
     # conn.change_field_name(table_name="version_code", old_name="center_number", new_name="top_fourth", new_field_class="varchar(125)")
@@ -264,10 +285,14 @@ if __name__ == "__main__":
         import requests
 
         res = requests.get(url=url)
-        print(res)
+        if "<h1>403 Forbidden</h1>" not in res.text:
+            print(111)
 
-    url = "http://www.boygirs.com/about"
-    for i in range(100):
-        srf(url)
+    # url = "http://www.boygirs.com/about"
+    # import time
+    # k = time.time()
+    # for i in range(100):
+    #     srf(url)
+    # print(time.time() - k)
 
 

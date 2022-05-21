@@ -92,5 +92,45 @@ markdown_content_article_id = "article_id"
 markdown_content_user_id = "user_id"
 markdown_content_content = "content"
 markdown_content_content_data = "content_date"
-
-
+# user_view_number 文章浏览量、点瓒数量
+"""
+user_view_number = {
+    "article_id": "VARCHAR(250)",
+    "user_id": "VARCHAR(250)",
+    "view_number": "VARCHAR(250)",
+    "like_number": "VARCHAR(250)",
+}
+"""
+user_view_number = "user_view_number"
+user_view_number_article_id = "article_id"
+user_view_number_user_id = "user_id"
+user_view_number_view_number = "view_number"
+user_view_number_like_number = "like_number"
+"""
+    # number_of_visits 博客留言表
+    number_of_visits = {
+        "user_id": "VARCHAR(250)",
+        "book": "text",
+        "book_id": "VARCHAR(250)",
+        "date": "text"
+    }
+"""
+number_of_visits = "number_of_visits"
+number_of_visits_user_id = "user_id"
+number_of_visits_book = "book"
+number_of_visits_book_id = "book_id"
+number_of_visits_date = "date"
+"""
+    # 用户留言
+    guest_book = {
+        "user_id": "VARCHAR(250)",
+        "book": "text",
+        "book_id": "VARCHAR(250)",
+        "date": "text"
+    }
+"""
+guest_book = "guest_book"
+guest_book_user_id = "user_id"
+guest_book_book = "book"
+guest_book_book_id = "book_id"
+guest_book_date = "date"

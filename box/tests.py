@@ -1,6 +1,7 @@
 import jwt
 import requests as requests
-from django.test import TestCase
+import hashlib
+import base64
 
 # Create your tests here.
 requests = requests
@@ -19,23 +20,6 @@ def login(requests):
 def df(w):
     print(w)
     return w
-
-
-# print(df("eee"))
-# url = "http://127.0.0.1:8000/box_mode"
-# headers = {
-#     "Content-Type": "application/json"
-# }
-# playload = {
-#     "is_log": "sdffffodxx324mkfjigo"
-# }
-# res = requests.post(url, headers=headers)
-# cok = res.cookies.get("is_log")
-# print(cok)
-import time
-import hashlib
-import json
-import base64
 
 
 def base64_util(d):

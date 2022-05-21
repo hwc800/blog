@@ -71,6 +71,9 @@ class MySql(object):
         else:
             return False
 
+    def __del__(self):
+        self.close()
+
 
 class Table(object):
     def __init__(self, db, table_name, db_name):

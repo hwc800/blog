@@ -33,12 +33,16 @@ def insert_look_or_like_number(article_id, add_view_number=False, add_like_numbe
     table = db.usetable(config_db.user_view_number, config_db.DATABASE)
     result = table.select([{"article_id": article_id, "op": "="}])
 
+    if not result:
+        print(result)
+        return False
+
     if add_view_number:
-        sql = "update %s view_number=%s where article_id=%s" % (config_db.user_view_number, int(result["view_number"]) + 1, article_id)
+        sql = "update %s set view_number=%s where article_id=%s;" % (config_db.user_view_number, int(result["view_number"]) + 1, article_id)
         table.auto_select(sql)
 
     if add_like_number:
-        sql = "update %s like_number=%s where article_id=%s" % (config_db.user_view_number, int(result["like_number"]) + 1, article_id)
+        sql = "update %s set like_number=%s where article_id=%s;" % (config_db.user_view_number, int(result["like_number"]) + 1, article_id)
         table.auto_select(sql)
 
     return True

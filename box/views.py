@@ -89,6 +89,7 @@ def box_content(requests):
         content_id = str(time.time())
         content_date = str(datetime.datetime.now())[:19]
         content = g
+        content = content.replace("\"", "\\'")
         if not db.insert(config_db.markdown_content, user_id=user_id, content=content, content_date=content_date, article_id=content_id):
             return JsonResponse({"data": "no"})
 

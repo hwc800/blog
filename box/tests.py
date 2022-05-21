@@ -1,25 +1,12 @@
+import json
+import time
+
 import jwt
 import requests as requests
 import hashlib
 import base64
 
 # Create your tests here.
-requests = requests
-
-
-def login(requests):
-    g = requests.post
-    print(g)
-
-    def outer(func):
-        def inner(w):
-            return func(w)
-        return inner
-    return outer
-@login(requests)
-def df(w):
-    print(w)
-    return w
 
 
 def base64_util(d):
@@ -52,32 +39,25 @@ class JwtDemo:
 
 
 # if __name__ == "__main__":
-#     # h = json.dumps({"alg":"HS256", "typ": "JWT"})
-#     # p = json.dumps(
-#     #     {
-#     #         "exp": time.time() + 30,
-#     #         "iss": "Issuer",
-#     #         "iat": time.time(),
-#     #         "data": {
-#     #             "username": "xjj",
-#     #         }
-#     #     }
-#     # )
-#     # k = b"123456"
-#     # j = JwtDemo(header=h, paylod=p, key=k)
-#     p = {
-#             "exp": time.time() + 30,
+#     h = json.dumps({"alg": "HS256", "typ": "JWT"})
+#     p = json.dumps(
+#         {
+#             "exp": time.time() + 3000,
 #             "iss": "Issuer",
 #             "iat": time.time(),
 #             "data": {
 #                 "username": "xjj",
 #             }
 #         }
-#
-#     token = jwt.encode(p, "123456", algorithm="HS256")
-#     # j = JwtDemo(header=h, paylod=p, key=k)
-#     # token = j.jwt_res()
-#     print(token)
-#     token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTI0MTczMzcuNDg3MzQ3MSwiaXNzIjoiSXNzdWVyIiwiaWF0IjoxNjUyNDE3MzA3LjQ4NzM0NzEsImRhdGEiOnsidXNlcm5hbWUiOiJ4amoifX0.0nzFeIsU4w-bTCt2eJFy441Q5pWG1EjeQoaTZB_NnZw"
-#     jwt_deceode = jwt.decode(token, "123456", issuer="Issuer", algorithms=["HS256"])
-#     print(jwt_deceode)
+#     )
+#     k = b"123456"
+#     j = JwtDemo(header=h, paylod=p, key=k)
+#     token = j.jwt_res()
+#     # print(token)
+#     # st = base64.decodebytes(token)
+#     # print(st)
+#     # token = base64.decodebytes(token).decode("utf-8")
+#     h, p, f = token.split(b".")
+#     print(base64.b64decode(p).decode("utf-8"))
+
+

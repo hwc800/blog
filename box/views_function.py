@@ -71,6 +71,7 @@ def insert_views_number_or_like_number(**kwargs):
     try:
         table.insert(kwargs)
     except:
+        db.rollback()
         return False
 
     return True

@@ -4,7 +4,7 @@ from django.shortcuts import render
 import db
 import blog.config_db as config_db
 from ratelimit.decorators import ratelimit
-
+from blog import token as tk
 
 from box import views_function
 # Create your views here.
@@ -12,7 +12,6 @@ from box import views_function
 @ratelimit(key='ip', rate='1/2s', block=True)
 def comment(requests):
     if requests.method == 'GET':
-        from blog import token as tk
 
         token = requests.COOKIES.get("token")
         msg_token = tk.check_token_and(token)
@@ -75,7 +74,13 @@ def box_index(requests):
 def box_content(requests):
     import datetime, time
     if requests.method == 'POST':
-        user_id = requests.COOKIES.get("user_id")
+        token = requests.COOKIES.get("token")
+        msg_token = tk.check_token_and(token)
+
+        if not msg_token:
+            # 验证登陆状态
+            return HttpResponseRedirect("/login")
+        user_id = msg_token
         content_title = requests.POST.get("content_title")
         article_introduce = requests.POST.get("article_introduce")
 

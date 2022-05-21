@@ -18,6 +18,9 @@ class MySql(object):
             raise Exception("connect failed。")
         return db
 
+    def rollback(self):
+        self.db.rollback()
+
     def create(self,  sql):
         # sql = f'create table {table_name}({primary} int(124) primary key not null auto_increment{sql});'
         cursor = self.db.cursor()
@@ -349,7 +352,10 @@ def insert(tble, **kwargs):
     db = MySql(config_db.HOST, config_db.USER, config_db.PWD, config_db.DATABASE)
     # 操作表类
     table = db.usetable(tble, config_db.DATABASE)
-    table.insert(**kwargs)
+    try:
+        table.insert(**kwargs)
+    except:
+        db.rollback()
     db.close()
     return True
 

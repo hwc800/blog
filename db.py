@@ -75,7 +75,10 @@ class MySql(object):
             return False
 
     def __del__(self):
-        self.close()
+        try:
+            self.close()
+        except:
+            pass
 
 
 class Table(object):

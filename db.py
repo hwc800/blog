@@ -356,6 +356,7 @@ def insert(tble, **kwargs):
         table.insert(**kwargs)
     except:
         db.rollback()
+        return False
     db.close()
     return True
 

@@ -90,21 +90,20 @@ def box_content(requests):
         content_date = str(datetime.datetime.now())[:19]
         content = g
         content = content.replace("\"", "\\'")
-        try:
-            db.insert(config_db.markdown_content, user_id=user_id, content=content, content_date=content_date, article_id=content_id)
-        except:
+        if not db.insert(config_db.markdown_content, user_id=user_id, content=content, content_date=content_date, article_id=content_id):
             return JsonResponse({"data": "no"})
 
         # 插入导航表
-        try:
-            db.insert(config_db.user_data, article_id=content_id, user_id=user_id, article_title=content_title, article_introduce=article_introduce, date=content_date)
-        except:
+        if not db.insert(config_db.user_data, article_id=content_id, user_id=user_id, article_title=content_title, article_introduce=article_introduce, date=content_date):
             return JsonResponse({"data": "no"})
         # 浏览量点赞量数据初始化
+        mydb = db.MySql(config_db.HOST, config_db.USER, config_db.PWD, config_db.DATABASE)
+        # 操作表类
+        table = mydb.usetable(config_db.user_view_number, config_db.DATABASE)
         try:
-            views_function.insert_views_number_or_like_number(article_id=content_id, user_id=user_id, view_number=0, like_number=0, comment_number=0)
+            table.insert(article_id=content_id, user_id=user_id, view_number=0, like_number=0, comment_number=0)
         except:
-            return JsonResponse({"data": "no"})
+            JsonResponse({"data": "no"})
 
         return JsonResponse({"data": "ok"})
 
@@ -207,7 +206,5 @@ def set_token(requests):
         res.cookies.load({"token": token})
 
         return res
-
-
 
 

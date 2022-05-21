@@ -95,6 +95,11 @@ def box_content(requests):
             db.insert(config_db.user_data, article_id=content_id, user_id=user_id, article_title=content_title, article_introduce=article_introduce, date=content_date)
         except:
             return JsonResponse({"data": "no"})
+        # 浏览量点赞量数据初始化
+        try:
+            views_function.insert_views_number_or_like_number(article_id=content_id, user_id=user_id, view_number=0, like_number=0, comment_number=0)
+        except:
+            return JsonResponse({"data": "no"})
 
         return JsonResponse({"data": "ok"})
 

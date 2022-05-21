@@ -62,3 +62,15 @@ def index_select(user_id) -> int:
     g = mydb.db_dict(['article_title', 'article_introduce', 'date', 'view_number', 'like_number', 'like_number', "comment_number"], result)
     return g
 
+
+def insert_views_number_or_like_number(**kwargs):
+    """查询浏览量或点瓒数"""
+    db = mydb.MySql(config_db.HOST, config_db.USER, config_db.PWD, config_db.DATABASE)
+    # 操作表类
+    table = db.usetable(config_db.user_view_number, config_db.DATABASE)
+    try:
+        table.insert(kwargs)
+    except:
+        return False
+
+    return True

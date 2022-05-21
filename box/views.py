@@ -135,10 +135,10 @@ def box_show_mode(requests):
             content = content.replace("\a", "\\a")
 
         elif "'" in content:
-            content = content.replace("'", "\'")
+            content = content.replace("'", "&#39")
 
         elif "'" in content:
-            content = content.replace('"', '\"')
+            content = content.replace('"', '&#39')
 
         if not title:
             return JsonResponse({"data": "no"})

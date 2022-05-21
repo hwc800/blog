@@ -80,7 +80,7 @@ def box_content(requests):
         if not msg_token:
             # 验证登陆状态
             return HttpResponseRedirect("/login")
-        user_id = msg_token
+        user_id = msg_token["user_id"]
         content_title = requests.POST.get("content_title")
         article_introduce = requests.POST.get("article_introduce")
 

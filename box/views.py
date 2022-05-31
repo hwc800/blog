@@ -247,7 +247,7 @@ def edit_page(requests):
 
         if not title:
             return JsonResponse({"data": "no"})
-
+        print(title)
         title = title[0]["article_title"]
         article_introduce = title[0]["article_introduce"]
         data = {

@@ -240,9 +240,6 @@ def edit_page(requests):
         elif "\a" in content:
             content = content.replace("\a", "\\a")
 
-        elif "\a" in content:
-            content = content.replace("#", r"\#")
-
         if not title:
             return JsonResponse({"data": "no"})
         article_title = title[0]["article_title"]

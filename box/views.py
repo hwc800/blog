@@ -224,15 +224,13 @@ def edit_page(requests):
             return HttpResponseRedirect("/login")
 
         article_id = requests.GET.get("article_id")
-        print(000)
+
         if not article_id:
             return JsonResponse({"data": "no"})
         result = db.select_markdown_content(article_id)
-        print(00)
         title = db.select(config_db.user_data, article_id=article_id)
-        print(0)
         content = result[0]["content"]
-        print(1)
+
         if "\n" in content:
             content = content.replace("\n", "\\n")
 
@@ -247,15 +245,14 @@ def edit_page(requests):
 
         if not title:
             return JsonResponse({"data": "no"})
-        print(title)
-        title = title[0]["article_title"]
+        article_title = title[0]["article_title"]
         article_introduce = title[0]["article_introduce"]
         data = {
             "content": content,
-            "title": title,
+            "title": article_title,
             "article_introduce": article_introduce,
         }
-        print(2)
+
         res = render(requests, "page/edit_page.html", data)
         res.set_cookie("article_id", article_id)
 

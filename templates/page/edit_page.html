@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>明水洞天</title>
+		<!--适配手机-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="shortcut icon" href="static/ico/qyz.png">
+		<!--使用bootstrap的样式，比较好看-->
+		<link href="static/markdown/bootstrap.min.css" rel="stylesheet">
+		<style>
+			h1 {
+				font-family: Consolas, monaco, monospace;
+				font-size: 23px;
+				font-style: normal;
+				font-variant: normal;
+				font-weight: 500;
+				line-height: 23px;
+			}
+
+			h3 {
+				font-family: Consolas, monaco, monospace;
+				font-size: 17px;
+				font-style: normal;
+				font-variant: normal;
+				font-weight: 500;
+				line-height: 23px;
+			}
+
+			p {
+				font-family: Consolas, monaco, monospace;
+				font-size: 14px;
+				font-style: normal;
+				font-variant: normal;
+				font-weight: 400;
+				line-height: 23px;
+			}
+
+			blockquote {
+				font-family: Consolas, monaco, monospace;
+				font-size: 17px;
+				font-style: normal;
+				font-variant: normal;
+				font-weight: 400;
+				line-height: 23px;
+			}
+
+			pre {
+				font-family: Consolas, monaco, monospace;
+				font-size: 12px;
+				font-style: normal;
+				font-variant: normal;
+				font-weight: 400;
+				line-height: 23px;
+			}
+
+			#text-input {
+				margin-left: 4%;
+				padding: 15px;
+				height: 1200px;
+				width: 96%;
+				border: none;
+				resize: none;
+			}
+
+			#preview {
+				padding: 15px;
+				width: 96%;
+				border: none;
+				height: 1200px;
+				overflow-y:auto;
+				overflow-x:auto;
+			}
+
+			body {
+				overflow-x: none;
+			}
+		</style>
+		<meta name="mobile-agent" content="format=html5;url=static/">
+		<meta http-equiv="origin-trial" content="AxujKG9INjsZ8/gUq8+dTruNvk7RjZQ1oFhhgQbcTJKDnZfbzSTE81wvC2Hzaf3TW4avA76LTZEMdiedF1vIbA4AAABueyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2NTI3NzQ0MDAsImlzVGhpcmRQYXJ0eSI6dHJ1ZX0=">
+		<meta http-equiv="origin-trial" content="Azuce85ORtSnWe1MZDTv68qpaW3iHyfL9YbLRy0cwcCZwVnePnOmkUJlG8HGikmOwhZU22dElCcfrfX2HhrBPAkAAAB7eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2NTI3NzQ0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+		<meta http-equiv="origin-trial" content="A16nvcdeoOAqrJcmjLRpl1I6f3McDD8EfofAYTt/P/H4/AWwB99nxiPp6kA0fXoiZav908Z8etuL16laFPUdfQsAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2NTI3NzQ0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+		<meta http-equiv="origin-trial" content="AxBHdr0J44vFBQtZUqX9sjiqf5yWZ/OcHRcRMN3H9TH+t90V/j3ENW6C8+igBZFXMJ7G3Pr8Dd13632aLng42wgAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2NTI3NzQ0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+		<meta http-equiv="origin-trial" content="A88BWHFjcawUfKU3lIejLoryXoyjooBXLgWmGh+hNcqMK44cugvsI5YZbNarYvi3roc1fYbHA1AVbhAtuHZflgEAAAB2eyJvcmlnaW4iOiJodHRwczovL2dvb2dsZS5jb206NDQzIiwiZmVhdHVyZSI6IlRydXN0VG9rZW5zIiwiZXhwaXJ5IjoxNjUyNzc0NDAwLCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==">
+		<meta http-equiv="origin-trial" content="AzoawhTRDevLR66Y6MROu167EDncFPBvcKOaQispTo9ouEt5LvcBjnRFqiAByRT+2cDHG1Yj4dXwpLeIhc98/gIAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjYxMjk5MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==">
+		<meta http-equiv="origin-trial" content="A6+nc62kbJgC46ypOwRsNW6RkDn2x7tgRh0wp7jb3DtFF7oEhu1hhm4rdZHZ6zXvnKZLlYcBlQUImC4d3kKihAcAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjYxMjk5MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==">
+		<meta http-equiv="origin-trial" content="A/9La288e7MDEU2ifusFnMg1C2Ij6uoa/Z/ylwJIXSsWfK37oESIPbxbt4IU86OGqDEPnNVruUiMjfKo65H/CQwAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjYxMjk5MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==">
+
+	</head>
+	<script type="text/javascript" src="static/box_static/jquery-1.7.1.min.js"></script>
+	<script>
+	jQuery.noConflict();
+	// 使用 jQuery
+	jQuery("div p").hide();
+
+		function saved_to_server(content,content_title,article_introduce){
+			jQuery.ajax({
+				type:"post",
+				url:"/update_content",
+				dataType:"json",
+				traditional:true,
+				headers:{'X-CSRFToken':'{{ csrf_token }}'},
+				data:{
+					"content": content,
+					"content_title": content_title,
+					"article_introduce": article_introduce,
+				},
+				success:function(data){
+					if(data.data=="ok"){
+						window.location.href='http://www.boygirs.com/user_index';
+					}else{
+					    alert("提交失败");
+					}
+				}
+			})
+			}
+	</script>
+	<body>
+		<center>
+			<h1><input id="content_title" type="text" value="{{ title }}"></h1>
+			<textarea id="content_introduce" style="width:700px;height:100px;">{{ article_introduce }}</textarea>
+			<button onclick="saved();style.display='none';" id="saved">保存</button>
+			<button onclick="edit();style.display='none';" id="edit" style="display:none;">编辑</button>
+		</center>
+		<div class="row">
+			<div id="printNum">
+				<div class="col-md-6">
+					<textarea class="bg-success" id="text-input" oninput="this.editor.update()" rows="6" value="{{ content }}"></textarea>
+				</div>
+			</div>
+			<div id="ShowPage">
+				<div class="col-md-6">
+					<div id="preview" class="bg-primary" rows="6"> </div>
+				</div>
+			</div>
+		</div>
+
+		<script src="static/markdown/markdown.min.js"></script>
+		<script>
+			function Editor(input, preview) {
+				this.update = function() {
+					preview.innerHTML = markdown.toHTML(input.value);
+				};
+				input.editor = this;
+				this.update();
+			}
+			var $ = function(id) {
+				return document.getElementById(id);
+			};
+			new Editor($("text-input"), $("preview"));
+		</script>
+		<script>
+			function saved(){
+				document.getElementById("printNum").style.display="none";
+				document.getElementById("edit").style.display="inline";
+				document.getElementById("ShowPage").style.margin="0 0 0 30%";
+				var content = document.getElementById("text-input").value;
+				var content_title = document.getElementById("content_title").value;
+				var article_introduce = document.getElementById("content_introduce").value;
+				alert(article_introduce)
+				saved_to_server(content,content_title,article_introduce);
+
+				};
+			function edit(){
+				document.getElementById("printNum").style.display="inline";
+				document.getElementById("saved").style.display="inline";
+			};
+		</script>
+	</body>
+</html>

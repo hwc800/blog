@@ -211,3 +211,91 @@ def set_token(requests):
         return res
 
 
+@ratelimit(key='ip', rate='1/2s', block=True)
+def edit_page(requests):
+    # 修改文章
+    if requests.method == 'GET':
+        from blog import token as tk
+
+        token = requests.COOKIES.get("token")
+        msg_token = tk.check_token_and(token)
+        if not msg_token:
+            # 严重登陆状态
+            return HttpResponseRedirect("/login")
+
+        article_id = requests.GET.get("article_id")
+
+        if not article_id:
+            return JsonResponse({"data": "no"})
+        result = db.select_markdown_content(article_id)
+        title = db.select(config_db.user_data, article_id=article_id)
+
+        content = result[0]["content"]
+
+        if "\n" in content:
+            content = content.replace("\n", "\\n")
+
+        elif "\t" in content:
+            content = content.replace("\t", "\\t")
+
+        elif "\a" in content:
+            content = content.replace("\a", "\\a")
+
+        elif "\a" in content:
+            content = content.replace("#", r"\#")
+
+        if not title:
+            return JsonResponse({"data": "no"})
+
+        title = title[0]["article_title"]
+        article_introduce = title[0]["article_introduce"]
+        data = {
+            "content": content,
+            "title": title,
+            "article_introduce": article_introduce,
+        }
+
+        res = render(requests, "page/edit_page.html", data)
+        res.set_cookie("article_id", article_id)
+
+        return res
+
+
+# 修改文章数据
+@ratelimit(key='ip', rate='1/2s', block=True)
+def update_content(requests):
+    import datetime, time
+    if requests.method == 'POST':
+        token = requests.COOKIES.get("token")
+        msg_token = tk.check_token_and(token)
+
+        if not msg_token:
+            # 验证登陆状态
+            return HttpResponseRedirect("/login")
+        user_id = msg_token["user_id"]
+        content_title = requests.POST.get("content_title")
+        article_introduce = requests.POST.get("article_introduce")
+
+        # 插入content
+        g = requests.POST.get("content")
+        content_id = requests.COOKIES.get("content_id")
+        content_date = str(datetime.datetime.now())[:19]
+        content = g
+        content = content.replace("\"", "\\'")
+
+        datas = {
+            "content": content,
+        }
+        # 修改content
+        if not db.update(config_db.markdown_content, need_update_file_names_and_datas=datas, where_is_files={"content_id": content_id}):
+            return JsonResponse({"data": "no"})
+
+        # 修改导航表
+        datas = {
+            "content_title": content_title,
+            "article_introduce": article_introduce,
+        }
+        if not db.update(config_db.user_data, need_update_file_names_and_datas=datas, where_is_files={"content_id": content_id}):
+            return JsonResponse({"data": "no"})
+
+        return JsonResponse({"data": "ok"})

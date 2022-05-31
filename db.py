@@ -232,8 +232,12 @@ class Table(object):
 
         sql = "UPDATE %s SET %s where %s;" % (self.table, files_and_value, where_file_and_value)
         cursor = self.db.cursor()
-        cursor.execute(sql)
 
+        try:
+            cursor.execute(sql)
+        except:
+            cursor.rollback()
+            return False
 
 def isql(arr):
     # 处理sql语句，并组装成相应sql执行语句
@@ -387,3 +391,14 @@ def select(table, **kwargs):
     return result
 
 
+def update(table, need_update_file_names_and_datas=None, where_is_files=None):
+    db = MySql(config_db.HOST, config_db.USER, config_db.PWD, config_db.DATABASE)
+    # 操作表类
+    table = db.usetable(table, config_db.DATABASE)
+    try:
+        table.update_table(need_update_file_names_and_datas=need_update_file_names_and_datas, where_is_files=where_is_files)
+    except:
+        db.rollback()
+        return False
+    db.close()
+    return True

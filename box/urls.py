@@ -14,5 +14,7 @@ urlpatterns = [
     url(r'^user_index', views.user_index, name='user_index'),
     url(r'^login', views.login, name='login'),
     url(r'^set_token', views.set_token, name='set_token'),
+    url(r'^edit_page', views.edit_page, name='edit_page'),
+    url(r'^update_content', views.update_content, name='update_content'),
     url(r'^', views.box_index),
 ]

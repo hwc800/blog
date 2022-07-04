@@ -25,11 +25,11 @@ class CreatToken(object):
         tm = time.time()
 
         msg = {
-            "exp": tm + 10,
-            "Issu": "%s" % self.issu,
-            "iat": tm,
+            "exp": tm + 10,  # 设置过期时间，此处为10s
+            "Issu": "%s" % self.issu,  # 签名者
+            "iat": tm,  # token开始计时的时间戳
             "data": {
-                "user_id": 1500,
+                "user_id": 1500,  # 这里是加密信息部分，data自定义
             }
         }
 
@@ -39,15 +39,17 @@ class CreatToken(object):
         import hashlib
 
         key = self._header() + b"." + self._paylod()
-        result = hashlib.sha256(b"{self.password}")
+        result = hashlib.sha256(b"{self.password}")  # 密码需要先sha256
         result.update(key)
-        return base64_util(result.hexdigest())
+        return base64_util(result.hexdigest())  # singe部分最后以16进制用base64加密
 
     def token(self):
+        # 为了更好的体现token的组成，特意如此写，主要为以下三部分。
         return self._header() + b"." + self._paylod() + b"." + self._sing()
 
 
 def token_is_live(token):
+    """解码token，判断是否过期"""
     import time
 
     h, p, f = token.split(b".")
@@ -60,8 +62,8 @@ def token_is_live(token):
     return False
 
 
-# if __name__ == "__main__":
-    # q = CreatToken().token()
+if __name__ == "__main__":
+    q = CreatToken().token()
     # print(q)
     # st = base64.decodebytes(q)
     # print(st)
@@ -69,4 +71,4 @@ def token_is_live(token):
     # h, p, f = q.split(b".")
     # exp = base64.b64decode(p).decode("utf-8")
     # print(exp)
-    # print(token_is_live(q))
+    print(token_is_live(q))

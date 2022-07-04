@@ -62,6 +62,7 @@ def box_index(requests):
             page += 1
 
         content = {"data": data}
+        content["new"] = result[-1]
         rep = render(requests, "mytemplates/box_index.html", content)
         rep.set_cookie("is_log", "sdffffodxx324mkfjigo")
         rep.set_cookie("is_root", "10re0gr4##**ty45555cccdert2143546##@%^%00")

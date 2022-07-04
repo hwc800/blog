@@ -34,7 +34,7 @@ class JwtDemo:
         return hmac_util(self.key, s_group)
 
     def jwt_res(self):
-        jwt_res = base64_util(self.header) + b"." + base64_util(self.paylod) + b"." +base64_util(self.sign())
+        jwt_res = base64_util(self.header) + b"." + base64_util(self.paylod) + b"." + base64_util(self.sign())
         return jwt_res
 
 
@@ -53,9 +53,9 @@ class JwtDemo:
 #     k = b"123456"
 #     j = JwtDemo(header=h, paylod=p, key=k)
 #     token = j.jwt_res()
-#     # print(token)
-#     # st = base64.decodebytes(token)
-#     # print(st)
+#     print(token)
+#     st = base64.decodebytes(token)
+#     print(st)
 #     # token = base64.decodebytes(token).decode("utf-8")
 #     h, p, f = token.split(b".")
 #     print(base64.b64decode(p).decode("utf-8"))

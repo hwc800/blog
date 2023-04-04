@@ -3,13 +3,12 @@ from django.http import JsonResponse, HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 import db
 import blog.config_db as config_db
-from ratelimit.decorators import ratelimit
+
 from blog import token as tk
 
 from box import views_function
 # Create your views here.
 # blog留言
-@ratelimit(key='ip', rate='1/2s', block=True)
 def comment(requests):
     if requests.method == 'GET':
 
@@ -23,8 +22,7 @@ def comment(requests):
         return render(requests, "page/comment.html")
 
 
-# 关于博主
-@ratelimit(key='ip', rate='1/2s', block=True)
+# 关于博主)
 def about(requests):
     if requests.method == 'GET':
 
@@ -32,7 +30,6 @@ def about(requests):
 
 
 # 模板
-@ratelimit(key='ip', rate='1/2s', block=True)
 def box_mode(requests):
     if requests.method == 'GET':
         from blog import token as tk
@@ -49,7 +46,6 @@ def box_mode(requests):
 
 
 # 主页
-@ratelimit(key='ip', rate='1/2s', block=True)
 def box_index(requests):
     if requests.method == 'GET':
 
@@ -71,7 +67,6 @@ def box_index(requests):
 
 
 # 存储模板传递的数据
-@ratelimit(key='ip', rate='1/2s', block=True)
 def box_content(requests):
     import datetime, time
     if requests.method == 'POST':
@@ -110,7 +105,6 @@ def box_content(requests):
 
 
 # 文章详情界面
-@ratelimit(key='ip', rate='1/2s', block=True)
 def box_show_mode(requests):
     if requests.method == "GET":
 
@@ -155,7 +149,6 @@ def box_show_mode(requests):
         return res
 
 
-@ratelimit(key='ip', rate='1/2s', block=True)
 def user_index(requests):
     # 我的界面
     if requests.method == 'GET':
@@ -183,13 +176,11 @@ def user_index(requests):
         return render(requests, "page/user_index.html", content)
 
 
-@ratelimit(key='ip', rate='1/2s', block=True)
 def login(requests):
     if requests.method == "GET":
         return render(requests, "page/login/login.html")
 
 
-@ratelimit(key='ip', rate='1/2s', block=True)
 def set_token(requests):
     # 验证登陆
     if requests.method == "POST":
@@ -212,7 +203,6 @@ def set_token(requests):
         return res
 
 
-@ratelimit(key='ip', rate='1/2s', block=True)
 def edit_page(requests):
     # 修改文章
     if requests.method == 'GET':
@@ -258,7 +248,6 @@ def edit_page(requests):
 
 
 # 修改文章数据
-@ratelimit(key='ip', rate='1/2s', block=True)
 def update_content(requests):
     import datetime, time
     if requests.method == 'POST':
